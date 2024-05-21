@@ -66,6 +66,7 @@ set(CMAKE_TARGET_DEFINITIONS_ASM
 
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
+  "."
   "_deps/pico_sdk-src/src/common/pico_stdlib/include"
   "_deps/pico_sdk-src/src/rp2_common/hardware_gpio/include"
   "_deps/pico_sdk-src/src/common/pico_base/include"
@@ -108,6 +109,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "_deps/pico_sdk-src/src/rp2_common/hardware_pwm/include"
   "_deps/pico_sdk-src/src/rp2_common/hardware_flash/include"
   "_deps/pico_sdk-src/src/rp2_common/pico_multicore/include"
+  "_deps/pico_sdk-src/src/rp2_common/hardware_pio/include"
   )
 
 # The set of dependency files which are needed:
@@ -127,6 +129,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/mark/pico-sync-motor-dev/build/_deps/pico_sdk-src/src/rp2_common/hardware_flash/flash.c" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_flash/flash.c.obj" "gcc" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_flash/flash.c.obj.d"
   "/home/mark/pico-sync-motor-dev/build/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj" "gcc" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj.d"
   "/home/mark/pico-sync-motor-dev/build/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj" "gcc" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj.d"
+  "/home/mark/pico-sync-motor-dev/build/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj" "gcc" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj.d"
   "/home/mark/pico-sync-motor-dev/build/_deps/pico_sdk-src/src/rp2_common/hardware_pll/pll.c" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pll/pll.c.obj" "gcc" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pll/pll.c.obj.d"
   "/home/mark/pico-sync-motor-dev/build/_deps/pico_sdk-src/src/rp2_common/hardware_sync/sync.c" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_sync/sync.c.obj" "gcc" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_sync/sync.c.obj.d"
   "/home/mark/pico-sync-motor-dev/build/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj" "gcc" "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj.d"

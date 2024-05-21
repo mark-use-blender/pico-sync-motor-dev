@@ -744,6 +744,20 @@ CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_multic
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_multicore/multicore.c.s"
 	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mark/pico-sync-motor-dev/build/_deps/pico_sdk-src/src/rp2_common/pico_multicore/multicore.c -o CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_multicore/multicore.c.s
 
+CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj: CMakeFiles/pico-sync-motor-dev.dir/flags.make
+CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj: _deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c
+CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj: CMakeFiles/pico-sync-motor-dev.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mark/pico-sync-motor-dev/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj -MF CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj.d -o CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj -c /home/mark/pico-sync-motor-dev/build/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c
+
+CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.i"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mark/pico-sync-motor-dev/build/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c > CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.i
+
+CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.s"
+	/usr/bin/arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mark/pico-sync-motor-dev/build/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c -o CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.s
+
 # Object files for target pico-sync-motor-dev
 pico__sync__motor__dev_OBJECTS = \
 "CMakeFiles/pico-sync-motor-dev.dir/main.c.obj" \
@@ -794,7 +808,8 @@ pico__sync__motor__dev_OBJECTS = \
 "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj" \
 "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_adc/adc.c.obj" \
 "CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_flash/flash.c.obj" \
-"CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_multicore/multicore.c.obj"
+"CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_multicore/multicore.c.obj" \
+"CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj"
 
 # External object files for target pico-sync-motor-dev
 pico__sync__motor__dev_EXTERNAL_OBJECTS =
@@ -848,10 +863,11 @@ pico-sync-motor-dev.elf: CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/s
 pico-sync-motor-dev.elf: CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_adc/adc.c.obj
 pico-sync-motor-dev.elf: CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_flash/flash.c.obj
 pico-sync-motor-dev.elf: CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_multicore/multicore.c.obj
+pico-sync-motor-dev.elf: CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
 pico-sync-motor-dev.elf: CMakeFiles/pico-sync-motor-dev.dir/build.make
 pico-sync-motor-dev.elf: pico-sdk/src/rp2_common/boot_stage2/bs2_default_padded_checksummed.S
 pico-sync-motor-dev.elf: CMakeFiles/pico-sync-motor-dev.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mark/pico-sync-motor-dev/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Linking CXX executable pico-sync-motor-dev.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mark/pico-sync-motor-dev/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Linking CXX executable pico-sync-motor-dev.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pico-sync-motor-dev.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/arm-none-eabi-objcopy -Oihex /home/mark/pico-sync-motor-dev/build/pico-sync-motor-dev.elf pico-sync-motor-dev.hex
 	/usr/bin/arm-none-eabi-objcopy -Obinary /home/mark/pico-sync-motor-dev/build/pico-sync-motor-dev.elf pico-sync-motor-dev.bin

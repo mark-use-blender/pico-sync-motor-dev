@@ -130,6 +130,19 @@ pico-sync-motor-dev/fast:
 .PHONY : pico-sync-motor-dev/fast
 
 #=============================================================================
+# Target rules for targets named pico-sync-motor-dev_in1_pio_h
+
+# Build rule for target.
+pico-sync-motor-dev_in1_pio_h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sync-motor-dev_in1_pio_h
+.PHONY : pico-sync-motor-dev_in1_pio_h
+
+# fast build rule for target.
+pico-sync-motor-dev_in1_pio_h/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev_in1_pio_h.dir/build.make CMakeFiles/pico-sync-motor-dev_in1_pio_h.dir/build
+.PHONY : pico-sync-motor-dev_in1_pio_h/fast
+
+#=============================================================================
 # Target rules for targets named ELF2UF2Build
 
 # Build rule for target.
@@ -582,6 +595,30 @@ _deps/pico_sdk-src/src/rp2_common/hardware_irq/irq_handler_chain.obj: _deps/pico
 _deps/pico_sdk-src/src/rp2_common/hardware_irq/irq_handler_chain.S.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev.dir/build.make CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 .PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
+
+_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.obj: _deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
+.PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.obj
+
+# target to build an object file
+_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev.dir/build.make CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
+.PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
+
+_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.i: _deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.i
+.PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.i
+
+# target to preprocess a source file
+_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev.dir/build.make CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.i
+.PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.i
+
+_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.s: _deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.s
+.PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.s
+
+# target to generate assembly for a file
+_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev.dir/build.make CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.s
+.PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.s
 
 _deps/pico_sdk-src/src/rp2_common/hardware_pll/pll.obj: _deps/pico_sdk-src/src/rp2_common/hardware_pll/pll.c.obj
 .PHONY : _deps/pico_sdk-src/src/rp2_common/hardware_pll/pll.obj
@@ -1220,6 +1257,7 @@ help:
 	@echo "... bs2_default_bin"
 	@echo "... bs2_default_padded_checksummed_asm"
 	@echo "... cyw43_driver_picow_cyw43_bus_pio_spi_pio_h"
+	@echo "... pico-sync-motor-dev_in1_pio_h"
 	@echo "... bs2_default"
 	@echo "... pico-sync-motor-dev"
 	@echo "... _deps/pico_sdk-src/src/common/pico_sync/critical_section.obj"
@@ -1269,6 +1307,9 @@ help:
 	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.i"
 	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.s"
 	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_irq/irq_handler_chain.obj"
+	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.obj"
+	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.i"
+	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.s"
 	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_pll/pll.obj"
 	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_pll/pll.i"
 	@echo "... _deps/pico_sdk-src/src/rp2_common/hardware_pll/pll.s"

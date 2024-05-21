@@ -1,4 +1,5 @@
 /home/mark/pico-sync-motor-dev/build/CMakeFiles/pico-sync-motor-dev.dir
+/home/mark/pico-sync-motor-dev/build/CMakeFiles/pico-sync-motor-dev_in1_pio_h.dir
 /home/mark/pico-sync-motor-dev/build/CMakeFiles/ELF2UF2Build.dir
 /home/mark/pico-sync-motor-dev/build/CMakeFiles/edit_cache.dir
 /home/mark/pico-sync-motor-dev/build/CMakeFiles/rebuild_cache.dir

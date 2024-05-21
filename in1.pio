@@ -1,0 +1,50 @@
+.program in1
+
+
+
+
+rst:
+IN x, 32
+SET x, 0
+
+
+
+WAIT 1 gpio 3
+
+.wrap_target
+SET x, 1
+JMP PIN, rst
+
+.wrap
+
+
+% c-sdk {
+
+// Helper function (for use in C program) to initialize this PIO program
+void in1_program_init(PIO pio, uint sm, uint offset, uint jpin, float div) {
+
+    // Sets up state machine and wrap target. This function is automatically
+    // generated in blink.pio.h.
+    pio_sm_config c = in1_program_get_default_config(offset);
+
+
+
+
+
+    // Set the pin direction to output (in PIO)
+    pio_sm_set_consecutive_pindirs(pio, sm, jpin, 1, true);
+    sm_config_set_jmp_pin(&c, jpin);
+
+    
+    // Set the clock divider for the state machine
+    sm_config_set_clkdiv(&c, div);
+
+    // Load configuration and jump to start of the program
+    pio_sm_init(pio, sm, offset, &c);
+}
+
+%}
+
+
+
+
