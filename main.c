@@ -1,5 +1,5 @@
 /*
-openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-FOREHEAD.elf verify reset exit"
+openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-sync-motor-dev.elf verify reset exit"
 */
 #include <math.h>
 #include <stdio.h>
