@@ -70,7 +70,7 @@ pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bu
 
 pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.pio.h: _deps/pico_sdk-src/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.pio
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mark/pico-sync-motor-dev/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating cyw43_bus_pio_spi.pio.h"
-	cd /home/mark/pico-sync-motor-dev/build/pico-sdk/src/rp2_common/pico_cyw43_driver && "/mnt/c/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk-tools/pioasm.exe" -o c-sdk /home/mark/pico-sync-motor-dev/build/_deps/pico_sdk-src/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.pio /home/mark/pico-sync-motor-dev/build/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.pio.h
+	cd /home/mark/pico-sync-motor-dev/build/pico-sdk/src/rp2_common/pico_cyw43_driver && ../../../../pioasm/pioasm -o c-sdk /home/mark/pico-sync-motor-dev/build/_deps/pico_sdk-src/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.pio /home/mark/pico-sync-motor-dev/build/pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.pio.h
 
 cyw43_driver_picow_cyw43_bus_pio_spi_pio_h: pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h
 cyw43_driver_picow_cyw43_bus_pio_spi_pio_h: pico-sdk/src/rp2_common/pico_cyw43_driver/cyw43_bus_pio_spi.pio.h

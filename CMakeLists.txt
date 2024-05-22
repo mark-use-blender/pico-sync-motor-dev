@@ -33,6 +33,7 @@ pico_add_extra_outputs(pico-sync-motor-dev)
 target_link_libraries(
   pico-sync-motor-dev 
   pico_stdlib 
+  hardware_clocks
   hardware_gpio 
   hardware_adc 
   hardware_pwm 
