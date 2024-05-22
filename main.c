@@ -36,9 +36,6 @@ int main() {
     // return with the memory offset of the program.
     uint offset = pio_add_program(pio, &in1_program);
 
-    // Calculate the PIO clock divider
-
-
     // Initialize the program using the helper function in our .pio file
     in1_program_init(pio, sm, offset, input1, 1);
 
