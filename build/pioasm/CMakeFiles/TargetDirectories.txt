@@ -1,3 +1,0 @@
-/home/mark/pico-sync-motor-dev/build/pioasm/CMakeFiles/pioasm.dir
-/home/mark/pico-sync-motor-dev/build/pioasm/CMakeFiles/edit_cache.dir
-/home/mark/pico-sync-motor-dev/build/pioasm/CMakeFiles/rebuild_cache.dir

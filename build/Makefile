@@ -143,19 +143,6 @@ pico-sync-motor-dev_in1_pio_h/fast:
 .PHONY : pico-sync-motor-dev_in1_pio_h/fast
 
 #=============================================================================
-# Target rules for targets named ELF2UF2Build
-
-# Build rule for target.
-ELF2UF2Build: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ELF2UF2Build
-.PHONY : ELF2UF2Build
-
-# fast build rule for target.
-ELF2UF2Build/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ELF2UF2Build.dir/build.make CMakeFiles/ELF2UF2Build.dir/build
-.PHONY : ELF2UF2Build/fast
-
-#=============================================================================
 # Target rules for targets named bs2_default
 
 # Build rule for target.
@@ -193,19 +180,6 @@ bs2_default_padded_checksummed_asm: cmake_check_build_system
 bs2_default_padded_checksummed_asm/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/build.make pico-sdk/src/rp2_common/boot_stage2/CMakeFiles/bs2_default_padded_checksummed_asm.dir/build
 .PHONY : bs2_default_padded_checksummed_asm/fast
-
-#=============================================================================
-# Target rules for targets named PioasmBuild
-
-# Build rule for target.
-PioasmBuild: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 PioasmBuild
-.PHONY : PioasmBuild
-
-# fast build rule for target.
-PioasmBuild/fast:
-	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild.dir/build.make pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/PioasmBuild.dir/build
-.PHONY : PioasmBuild/fast
 
 #=============================================================================
 # Target rules for targets named cyw43_driver_picow_cyw43_bus_pio_spi_pio_h
@@ -1252,8 +1226,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... ELF2UF2Build"
-	@echo "... PioasmBuild"
 	@echo "... bs2_default_bin"
 	@echo "... bs2_default_padded_checksummed_asm"
 	@echo "... cyw43_driver_picow_cyw43_bus_pio_spi_pio_h"

@@ -39,3 +39,4 @@ build/_deps/*
 build/CMakeScripts/*
 build/pico-sdk/*
 build/generated/*
+.profile
