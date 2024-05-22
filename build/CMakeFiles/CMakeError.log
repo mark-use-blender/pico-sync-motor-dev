@@ -1,24 +1,176 @@
 Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
-Compiler: /usr/bin/arm-none-eabi-gcc 
+Compiler: /usr/bin/cc 
 Build flags: ;-mcpu=cortex-m0plus;-mthumb
 Id flags:  
 
 The output was:
 1
-/usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/bin/ld: /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o): in function `exit':
-/build/newlib-pB30de/newlib-3.3.0/build/arm-none-eabi/thumb/v6-m/nofp/newlib/libc/stdlib/../../../../../../../../newlib/libc/stdlib/exit.c:64: undefined reference to `_exit'
-collect2: error: ld returned 1 exit status
+cc: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+cc: error: unrecognized command-line option ‘-mthumb’
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /usr/bin/cc 
+Build flags: ;-mcpu=cortex-m0plus;-mthumb
+Id flags: -c 
+
+The output was:
+1
+cc: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+cc: error: unrecognized command-line option ‘-mthumb’
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /usr/bin/cc 
+Build flags: ;-mcpu=cortex-m0plus;-mthumb
+Id flags: -Aa 
+
+The output was:
+1
+cc: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+cc: error: unrecognized command-line option ‘-mthumb’
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /usr/bin/cc 
+Build flags: ;-mcpu=cortex-m0plus;-mthumb
+Id flags: -D__CLASSIC_C__ 
+
+The output was:
+1
+cc: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+cc: error: unrecognized command-line option ‘-mthumb’
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /usr/bin/cc 
+Build flags: ;-mcpu=cortex-m0plus;-mthumb
+Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+
+The output was:
+1
+cc: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+cc: error: unrecognized command-line option ‘-mthumb’
+cc: error: unrecognized command-line option ‘--target=arm-arm-none-eabi’
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /usr/bin/cc 
+Build flags: ;-mcpu=cortex-m0plus;-mthumb
+Id flags: -c;-I__does_not_exist__ 
+
+The output was:
+1
+cc: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+cc: error: unrecognized command-line option ‘-mthumb’
 
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
-Compiler: /usr/bin/arm-none-eabi-g++ 
+Compiler: /usr/bin/c++ 
 Build flags: ;-mcpu=cortex-m0plus;-mthumb
 Id flags:  
 
 The output was:
 1
-/usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/bin/ld: /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-exit.o): in function `exit':
-/build/newlib-pB30de/newlib-3.3.0/build/arm-none-eabi/thumb/v6-m/nofp/newlib/libc/stdlib/../../../../../../../../newlib/libc/stdlib/exit.c:64: undefined reference to `_exit'
-collect2: error: ld returned 1 exit status
+c++: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+c++: error: unrecognized command-line option ‘-mthumb’
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/c++ 
+Build flags: ;-mcpu=cortex-m0plus;-mthumb
+Id flags: -c 
+
+The output was:
+1
+c++: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+c++: error: unrecognized command-line option ‘-mthumb’
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/c++ 
+Build flags: ;-mcpu=cortex-m0plus;-mthumb
+Id flags: --c++ 
+
+The output was:
+1
+c++: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+c++: error: unrecognized command-line option ‘-mthumb’
+c++: error: unrecognized command-line option ‘--c++’
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/c++ 
+Build flags: ;-mcpu=cortex-m0plus;-mthumb
+Id flags: --ec++ 
+
+The output was:
+1
+c++: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+c++: error: unrecognized command-line option ‘-mthumb’
+c++: error: unrecognized command-line option ‘--ec++’; did you mean ‘-Weffc++’?
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/c++ 
+Build flags: ;-mcpu=cortex-m0plus;-mthumb
+Id flags: --target=arm-arm-none-eabi;-mcpu=cortex-m3 
+
+The output was:
+1
+c++: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+c++: error: unrecognized command-line option ‘-mthumb’
+c++: error: unrecognized command-line option ‘--target=arm-arm-none-eabi’
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /usr/bin/c++ 
+Build flags: ;-mcpu=cortex-m0plus;-mthumb
+Id flags: -c;-I__does_not_exist__ 
+
+The output was:
+1
+c++: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+c++: error: unrecognized command-line option ‘-mthumb’
+
+
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: /home/mark/pico-sync-motor-dev/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b1500/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b1500.dir/build.make CMakeFiles/cmTC_b1500.dir/build
+gmake[1]: Entering directory '/home/mark/pico-sync-motor-dev/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b1500.dir/CMakeCCompilerABI.c.obj
+/usr/bin/cc   -mcpu=cortex-m0plus -mthumb    -v -o CMakeFiles/cmTC_b1500.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake-3.22/Modules/CMakeCCompilerABI.c
+cc: warning: '-mcpu=' is deprecated; use '-mtune=' or '-march=' instead
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+OFFLOAD_TARGET_DEFAULT=1
+cc: error: unrecognized command-line option '-mthumb'
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Ubuntu 11.4.0-1ubuntu1~22.04' --with-bugurl=file:///usr/share/doc/gcc-11/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-11 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-11-XeT9lY/gcc-11-11.4.0/debian/tmp-gcn/usr --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+Thread model: posix
+Supported LTO compression algorithms: zlib zstd
+gcc version 11.4.0 (Ubuntu 11.4.0-1ubuntu1~22.04) 
+gmake[1]: *** [CMakeFiles/cmTC_b1500.dir/build.make:78: CMakeFiles/cmTC_b1500.dir/CMakeCCompilerABI.c.obj] Error 1
+gmake[1]: Leaving directory '/home/mark/pico-sync-motor-dev/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_b1500/fast] Error 2
+
+
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /home/mark/pico-sync-motor-dev/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_fe049/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fe049.dir/build.make CMakeFiles/cmTC_fe049.dir/build
+gmake[1]: Entering directory '/home/mark/pico-sync-motor-dev/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fe049.dir/testCCompiler.c.obj
+/usr/bin/cc   -mcpu=cortex-m0plus -mthumb  -o CMakeFiles/cmTC_fe049.dir/testCCompiler.c.obj -c /home/mark/pico-sync-motor-dev/build/CMakeFiles/CMakeTmp/testCCompiler.c
+cc: warning: ‘-mcpu=’ is deprecated; use ‘-mtune=’ or ‘-march=’ instead
+cc: error: unrecognized command-line option ‘-mthumb’
+gmake[1]: *** [CMakeFiles/cmTC_fe049.dir/build.make:78: CMakeFiles/cmTC_fe049.dir/testCCompiler.c.obj] Error 1
+gmake[1]: Leaving directory '/home/mark/pico-sync-motor-dev/build/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_fe049/fast] Error 2
+
 
 

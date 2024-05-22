@@ -31,4 +31,11 @@
 *.out
 *.app
 .vscode/c_cpp_properties.json
-build/.cmake/api/v1/reply/*.json
+build/.cmake/*
+build/CMakeFiles/*
+build/CMakeCache.txt
+build/Makefile/*
+build/_deps/*
+build/CMakeScripts/*
+build/pico-sdk/*
+build/generated/*
