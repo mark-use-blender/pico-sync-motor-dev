@@ -12,6 +12,7 @@ add_executable(pico-sync-motor-dev
 )
 pico_generate_pio_header(pico-sync-motor-dev
         ./../in1.pio
+        ./../in2.pio
 )
 
 pico_add_extra_outputs(pico-sync-motor-dev)

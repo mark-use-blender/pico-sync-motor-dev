@@ -1,8 +1,8 @@
-.program in1
+.program in2
 
 .wrap_target
 mov x, ! NULL
-WAIT 1 gpio 3
+WAIT 1 gpio 2
 
 loop:
 JMP PIN, rst
@@ -19,15 +19,15 @@ PUSH noblock
 % c-sdk {
 
 // Helper function (for use in C program) to initialize this PIO program
-void in1_program_init(PIO pio, uint sm, uint offset, float div) {
+void in2_program_init(PIO pio, uint sm, uint offset, float div) {
 
     // Sets up state machine and wrap target. This function is automatically
 
-    pio_sm_config c = in1_program_get_default_config(offset);
+    pio_sm_config c = in2_program_get_default_config(offset);
     sm_config_set_fifo_join (&c, 2);
 
 
-    sm_config_set_jmp_pin(&c, 2);
+    sm_config_set_jmp_pin(&c, 3);
     
     // Set the clock divider for the state machine
     sm_config_set_clkdiv(&c, div);

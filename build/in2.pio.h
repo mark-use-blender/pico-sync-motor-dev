@@ -9,16 +9,16 @@
 #endif
 
 // --- //
-// in1 //
+// in2 //
 // --- //
 
-#define in1_wrap_target 0
-#define in1_wrap 6
+#define in2_wrap_target 0
+#define in2_wrap 6
 
-static const uint16_t in1_program_instructions[] = {
+static const uint16_t in2_program_instructions[] = {
             //     .wrap_target
     0xa02b, //  0: mov    x, !null                   
-    0x2083, //  1: wait   1 gpio, 3                  
+    0x2082, //  1: wait   1 gpio, 2                  
     0x00c4, //  2: jmp    pin, 4                     
     0x0042, //  3: jmp    x--, 2                     
     0xa029, //  4: mov    x, !x                      
@@ -28,24 +28,24 @@ static const uint16_t in1_program_instructions[] = {
 };
 
 #if !PICO_NO_HARDWARE
-static const struct pio_program in1_program = {
-    .instructions = in1_program_instructions,
+static const struct pio_program in2_program = {
+    .instructions = in2_program_instructions,
     .length = 7,
     .origin = -1,
 };
 
-static inline pio_sm_config in1_program_get_default_config(uint offset) {
+static inline pio_sm_config in2_program_get_default_config(uint offset) {
     pio_sm_config c = pio_get_default_sm_config();
-    sm_config_set_wrap(&c, offset + in1_wrap_target, offset + in1_wrap);
+    sm_config_set_wrap(&c, offset + in2_wrap_target, offset + in2_wrap);
     return c;
 }
 
 // Helper function (for use in C program) to initialize this PIO program
-void in1_program_init(PIO pio, uint sm, uint offset, float div) {
+void in2_program_init(PIO pio, uint sm, uint offset, float div) {
     // Sets up state machine and wrap target. This function is automatically
-    pio_sm_config c = in1_program_get_default_config(offset);
+    pio_sm_config c = in2_program_get_default_config(offset);
     sm_config_set_fifo_join (&c, 2);
-    sm_config_set_jmp_pin(&c, 2);
+    sm_config_set_jmp_pin(&c, 3);
     // Set the clock divider for the state machine
     sm_config_set_clkdiv(&c, div);
     // Load configuration and jump to start of the program
