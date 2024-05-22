@@ -1,0 +1,48 @@
+.program off2
+
+.wrap_target
+mov x, ! NULL
+
+WAIT 0 gpio 2
+
+WAIT 0 gpio 3
+
+WAIT 1 gpio 2
+
+loop:
+JMP PIN, rst
+JMP x-- loop
+
+rst:
+mov x, ! X
+IN x, 32
+PUSH noblock
+
+.wrap
+
+
+% c-sdk {
+
+// Helper function (for use in C program) to initialize this PIO program
+void off2_program_init(PIO pio, uint sm, uint offset, float div) {
+
+    // Sets up state machine and wrap target. This function is automatically
+
+    pio_sm_config c = off2_program_get_default_config(offset);
+    sm_config_set_fifo_join (&c, 2);
+
+
+    sm_config_set_jmp_pin(&c, 3);
+    
+    // Set the clock divider for the state machine
+    sm_config_set_clkdiv(&c, div);
+
+    // Load configuration and jump to start of the program
+    pio_sm_init(pio, sm, offset, &c);
+}
+
+%}
+
+
+
+

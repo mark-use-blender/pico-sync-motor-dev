@@ -130,17 +130,56 @@ pico-sync-motor-dev/fast:
 .PHONY : pico-sync-motor-dev/fast
 
 #=============================================================================
-# Target rules for targets named pico-sync-motor-dev_in1_pio_h
+# Target rules for targets named pico-sync-motor-dev_off1_pio_h
 
 # Build rule for target.
-pico-sync-motor-dev_in1_pio_h: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sync-motor-dev_in1_pio_h
-.PHONY : pico-sync-motor-dev_in1_pio_h
+pico-sync-motor-dev_off1_pio_h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sync-motor-dev_off1_pio_h
+.PHONY : pico-sync-motor-dev_off1_pio_h
 
 # fast build rule for target.
-pico-sync-motor-dev_in1_pio_h/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev_in1_pio_h.dir/build.make CMakeFiles/pico-sync-motor-dev_in1_pio_h.dir/build
-.PHONY : pico-sync-motor-dev_in1_pio_h/fast
+pico-sync-motor-dev_off1_pio_h/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev_off1_pio_h.dir/build.make CMakeFiles/pico-sync-motor-dev_off1_pio_h.dir/build
+.PHONY : pico-sync-motor-dev_off1_pio_h/fast
+
+#=============================================================================
+# Target rules for targets named pico-sync-motor-dev_off2_pio_h
+
+# Build rule for target.
+pico-sync-motor-dev_off2_pio_h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sync-motor-dev_off2_pio_h
+.PHONY : pico-sync-motor-dev_off2_pio_h
+
+# fast build rule for target.
+pico-sync-motor-dev_off2_pio_h/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev_off2_pio_h.dir/build.make CMakeFiles/pico-sync-motor-dev_off2_pio_h.dir/build
+.PHONY : pico-sync-motor-dev_off2_pio_h/fast
+
+#=============================================================================
+# Target rules for targets named pico-sync-motor-dev_spe1_pio_h
+
+# Build rule for target.
+pico-sync-motor-dev_spe1_pio_h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sync-motor-dev_spe1_pio_h
+.PHONY : pico-sync-motor-dev_spe1_pio_h
+
+# fast build rule for target.
+pico-sync-motor-dev_spe1_pio_h/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev_spe1_pio_h.dir/build.make CMakeFiles/pico-sync-motor-dev_spe1_pio_h.dir/build
+.PHONY : pico-sync-motor-dev_spe1_pio_h/fast
+
+#=============================================================================
+# Target rules for targets named pico-sync-motor-dev_spe2_pio_h
+
+# Build rule for target.
+pico-sync-motor-dev_spe2_pio_h: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 pico-sync-motor-dev_spe2_pio_h
+.PHONY : pico-sync-motor-dev_spe2_pio_h
+
+# fast build rule for target.
+pico-sync-motor-dev_spe2_pio_h/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev_spe2_pio_h.dir/build.make CMakeFiles/pico-sync-motor-dev_spe2_pio_h.dir/build
+.PHONY : pico-sync-motor-dev_spe2_pio_h/fast
 
 #=============================================================================
 # Target rules for targets named bs2_default
@@ -1218,6 +1257,30 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev.dir/build.make CMakeFiles/pico-sync-motor-dev.dir/main.c.s
 .PHONY : main.c.s
 
+src/pico_servo.obj: src/pico_servo.c.obj
+.PHONY : src/pico_servo.obj
+
+# target to build an object file
+src/pico_servo.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev.dir/build.make CMakeFiles/pico-sync-motor-dev.dir/src/pico_servo.c.obj
+.PHONY : src/pico_servo.c.obj
+
+src/pico_servo.i: src/pico_servo.c.i
+.PHONY : src/pico_servo.i
+
+# target to preprocess a source file
+src/pico_servo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev.dir/build.make CMakeFiles/pico-sync-motor-dev.dir/src/pico_servo.c.i
+.PHONY : src/pico_servo.c.i
+
+src/pico_servo.s: src/pico_servo.c.s
+.PHONY : src/pico_servo.s
+
+# target to generate assembly for a file
+src/pico_servo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pico-sync-motor-dev.dir/build.make CMakeFiles/pico-sync-motor-dev.dir/src/pico_servo.c.s
+.PHONY : src/pico_servo.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1229,7 +1292,10 @@ help:
 	@echo "... bs2_default_bin"
 	@echo "... bs2_default_padded_checksummed_asm"
 	@echo "... cyw43_driver_picow_cyw43_bus_pio_spi_pio_h"
-	@echo "... pico-sync-motor-dev_in1_pio_h"
+	@echo "... pico-sync-motor-dev_off1_pio_h"
+	@echo "... pico-sync-motor-dev_off2_pio_h"
+	@echo "... pico-sync-motor-dev_spe1_pio_h"
+	@echo "... pico-sync-motor-dev_spe2_pio_h"
 	@echo "... bs2_default"
 	@echo "... pico-sync-motor-dev"
 	@echo "... _deps/pico_sdk-src/src/common/pico_sync/critical_section.obj"
@@ -1360,6 +1426,9 @@ help:
 	@echo "... main.obj"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/pico_servo.obj"
+	@echo "... src/pico_servo.i"
+	@echo "... src/pico_servo.s"
 .PHONY : help
 
 

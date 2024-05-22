@@ -8,11 +8,25 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 pico_sdk_init()
 add_executable(pico-sync-motor-dev
+  src/pico_servo.c
+  src/pico_servo.h
   main.c
 )
 pico_generate_pio_header(pico-sync-motor-dev
-        ./../in1.pio
-        ./../in2.pio
+        ./../off1.pio
+        
+)
+pico_generate_pio_header(pico-sync-motor-dev
+        ./../off2.pio
+        
+)
+pico_generate_pio_header(pico-sync-motor-dev
+        ./../spe1.pio
+        
+)
+pico_generate_pio_header(pico-sync-motor-dev
+        ./../spe2.pio
+        
 )
 
 pico_add_extra_outputs(pico-sync-motor-dev)
