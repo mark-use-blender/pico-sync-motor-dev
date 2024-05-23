@@ -320,7 +320,7 @@ PICO_STDIO_UART:BOOL=ON
 PICO_STDIO_USB:BOOL=OFF
 
 //The directory containing a CMake configuration file for pico-sdk-tools.
-pico-sdk-tools_DIR:PATH=pico-sdk-tools_DIR-NOTFOUND
+pico-sdk-tools_DIR:PATH=/mnt/c/Program Files/Raspberry Pi/Pico SDK v1.5.1/pico-sdk-tools
 
 //Value Computed by CMake
 pico-sync-motor-dev_BINARY_DIR:STATIC=/home/mark/pico-sync-motor-dev/build
