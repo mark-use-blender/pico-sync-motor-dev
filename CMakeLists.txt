@@ -40,6 +40,8 @@ target_link_libraries(
   hardware_uart 
   hardware_flash 
   hardware_sync 
+  hardware_timer
+  hardware_irq
   pico_multicore
   hardware_pio
 )

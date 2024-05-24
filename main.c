@@ -14,6 +14,7 @@ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-s
 #include "hardware/uart.h"
 #include "hardware/pio.h"
 #include "hardware/clocks.h"
+#include "hardware/irq.h"
 #include "off1.pio.h"
 #include "off2.pio.h"
 #include "spe1.pio.h"
