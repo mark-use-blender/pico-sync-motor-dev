@@ -33,7 +33,7 @@
 build/CMakeError.log
 build/CMakeOutput.log
 build/CMakeCache.txt
-build/CMakeinstall.cmake
+build/CMake_install.cmake
 .vscode/c_cpp_properties.json
 build/.cmake/*
 build/CMakeFiles/*
