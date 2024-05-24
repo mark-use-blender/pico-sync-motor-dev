@@ -2,5 +2,8 @@
     "cmake.additionalKits": [
         "~/pico-sdk/"
     ],
-    "C_Cpp.errorSquiggles": "enabled"
+    "C_Cpp.errorSquiggles": "enabled",
+    "cmake.configureEnvironment": {
+        "PICO_SDK_PATH": "~/pico-sdk/"
+    }
 }
