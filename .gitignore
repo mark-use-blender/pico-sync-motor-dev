@@ -30,10 +30,11 @@
 *.exe
 *.out
 *.app
+build/Makefile
 build/CMakeError.log
 build/CMakeOutput.log
 build/CMakeCache.txt
-build/CMake_install.cmake
+build/cmake_install.cmake
 .vscode/c_cpp_properties.json
 build/.cmake/*
 build/CMakeFiles/*
