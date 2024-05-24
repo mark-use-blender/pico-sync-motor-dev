@@ -1,6 +1,6 @@
 {
     "cmake.additionalKits": [
-        "~/pico/pico-sdk/"
+        "~/pico-sdk/"
     ],
     "C_Cpp.errorSquiggles": "enabled"
 }
