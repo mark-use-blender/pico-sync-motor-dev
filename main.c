@@ -30,55 +30,56 @@ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-s
 
 void estop_pin_callback(uint gpio, uint32_t events) {
     // Stop the motor
-    servo_set_position(SERVO_PIN, reset_pos);
+    //gpio_acknowledge_irq(gpio, events);
+    //servo_set_position(SERVO_PIN, reset_pos);
     gpio_put(LED_PIN, 0);
     // Stop the PIO state machines
-    pio_sm_set_enabled(pio0, 0, false);
-    pio_sm_set_enabled(pio0, 1, false);
-    pio_sm_set_enabled(pio0, 2, false);
-    pio_sm_set_enabled(pio0, 3, false);
-    pio_sm_set_enabled(pio1, 0, false);
-    pio_sm_set_enabled(pio1, 1, false);
-    pio_sm_set_enabled(pio1, 2, false);
-    pio_sm_set_enabled(pio1, 3, false);
+    // pio_sm_set_enabled(pio0, 0, false);
+    // pio_sm_set_enabled(pio0, 1, false);
+    // pio_sm_set_enabled(pio0, 2, false);
+    // pio_sm_set_enabled(pio0, 3, false);
+    // pio_sm_set_enabled(pio1, 0, false);
+    // pio_sm_set_enabled(pio1, 1, false);
+    // pio_sm_set_enabled(pio1, 2, false);
+    // pio_sm_set_enabled(pio1, 3, false);
     // Stop the program
     while (true) {
         gpio_put(LED_PIN, 1);
         sleep_ms(50);
         gpio_put(LED_PIN, 0);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 1);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 0);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 1);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 0);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 1);
-        sleep_ms(200);
-        gpio_put(LED_PIN, 0);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 1);
-        sleep_ms(200);
-        gpio_put(LED_PIN, 0);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 1);
-        sleep_ms(200);
-        gpio_put(LED_PIN, 0);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 1);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 0);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 1);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 0);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 1);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 0);
-        sleep_ms(200);
+        sleep_ms(100);
+        // gpio_put(LED_PIN, 1);
+        // sleep_ms(50);
+        // gpio_put(LED_PIN, 0);
+        // sleep_ms(50);
+        // gpio_put(LED_PIN, 1);
+        // sleep_ms(50);
+        // gpio_put(LED_PIN, 0);
+        // sleep_ms(50);
+        // gpio_put(LED_PIN, 1);
+        // sleep_ms(200);
+        // gpio_put(LED_PIN, 0);
+        // sleep_ms(50);
+        // gpio_put(LED_PIN, 1);
+        // sleep_ms(200);
+        // gpio_put(LED_PIN, 0);
+        // sleep_ms(50);
+        // gpio_put(LED_PIN, 1);
+        // sleep_ms(200);
+        // gpio_put(LED_PIN, 0);
+        // sleep_ms(50);
+        // gpio_put(LED_PIN, 1);
+        // sleep_ms(50);
+        // gpio_put(LED_PIN, 0);
+        // sleep_ms(50);
+        // gpio_put(LED_PIN, 1);
+        // sleep_ms(50);
+        // gpio_put(LED_PIN, 0);
+        // sleep_ms(50);
+        // gpio_put(LED_PIN, 1);
+        // sleep_ms(50);
+        // gpio_put(LED_PIN, 0);
+        // sleep_ms(200);
 
     }
 }
@@ -146,7 +147,7 @@ int main() {
         sleep_ms(50);
 
     }
-    gpio_set_irq_enabled_with_callback (estop_pin, GPIO_IRQ_EDGE_FALL, true, &estop_pin_callback);
+    gpio_set_irq_enabled_with_callback (estop_pin,GPIO_IRQ_LEVEL_LOW, true, &estop_pin_callback);
     gpio_put(LED_PIN, 1);
     while (true)
     {
