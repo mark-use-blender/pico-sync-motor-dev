@@ -31,6 +31,7 @@ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-s
 void estop_pin_callback(uint gpio, uint32_t events) {
     // Stop the motor
     servo_set_position(SERVO_PIN, reset_pos);
+    gpio_put(LED_PIN, 0);
     // Stop the PIO state machines
     pio_sm_set_enabled(pio0, 0, false);
     pio_sm_set_enabled(pio0, 1, false);
@@ -42,7 +43,43 @@ void estop_pin_callback(uint gpio, uint32_t events) {
     pio_sm_set_enabled(pio1, 3, false);
     // Stop the program
     while (true) {
-        tight_loop_contents();
+        gpio_put(LED_PIN, 1);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 0);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 1);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 0);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 1);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 0);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 1);
+        sleep_ms(200);
+        gpio_put(LED_PIN, 0);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 1);
+        sleep_ms(200);
+        gpio_put(LED_PIN, 0);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 1);
+        sleep_ms(200);
+        gpio_put(LED_PIN, 0);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 1);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 0);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 1);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 0);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 1);
+        sleep_ms(50);
+        gpio_put(LED_PIN, 0);
+        sleep_ms(200);
+
     }
 }
 
