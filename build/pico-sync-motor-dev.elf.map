@@ -119,8 +119,6 @@ Discarded input sections
                 0x0000000000000000       0x20 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
  .text.gpio_set_dormant_irq_enabled
                 0x0000000000000000       0x40 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
- .text.gpio_acknowledge_irq
-                0x0000000000000000       0x1c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
  .text.gpio_debug_pins_init
                 0x0000000000000000       0x7c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
  .text.gpio_set_input_enabled
@@ -1164,9 +1162,9 @@ Discarded input sections
                 0x0000000000000000       0xb0 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
  .text.pio_sm_drain_tx_fifo
                 0x0000000000000000       0x40 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
- .text          0x0000000000000000        0x0 /tmp/ccWxBP3C.o
- .data          0x0000000000000000        0x0 /tmp/ccWxBP3C.o
- .bss           0x0000000000000000        0x0 /tmp/ccWxBP3C.o
+ .text          0x0000000000000000        0x0 /tmp/ccBogQcd.o
+ .data          0x0000000000000000        0x0 /tmp/ccBogQcd.o
+ .bss           0x0000000000000000        0x0 /tmp/ccBogQcd.o
  .data          0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .bss           0x0000000000000000        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .text          0x0000000000000000       0x10 /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-atexit.o)
@@ -1430,11 +1428,11 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
 .boot2          0x0000000010000000      0x100
                 0x0000000010000000                __boot2_start__ = .
  *(.boot2)
- .boot2         0x0000000010000000      0x100 /tmp/ccWxBP3C.o
+ .boot2         0x0000000010000000      0x100 /tmp/ccBogQcd.o
                 0x0000000010000100                __boot2_end__ = .
                 0x0000000000000001                ASSERT (((__boot2_end__ - __boot2_start__) == 0x100), ERROR: Pico second stage bootloader must be 256 bytes in size)
 
-.text           0x0000000010000100     0x2de8
+.text           0x0000000010000100     0x2ea0
                 0x0000000010000100                __logical_binary_start = .
  *(.vectors)
  .vectors       0x0000000010000100       0xd4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/crt0.S.obj
@@ -1502,271 +1500,274 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x000000001000040c       0x80 CMakeFiles/pico-sync-motor-dev.dir/src/pico_servo.c.obj
                 0x000000001000040c                servo_set_position
  .text.estop_pin_callback
-                0x000000001000048c       0x20 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+                0x000000001000048c       0xa4 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
                 0x000000001000048c                estop_pin_callback
  .text.off1_program_init
-                0x00000000100004ac       0xa4 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
-                0x00000000100004ac                off1_program_init
+                0x0000000010000530       0xa4 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+                0x0000000010000530                off1_program_init
  .text.off2_program_init
-                0x0000000010000550       0xa4 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
-                0x0000000010000550                off2_program_init
+                0x00000000100005d4       0xa4 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+                0x00000000100005d4                off2_program_init
  .text.spe1_program_init
-                0x00000000100005f4       0xa8 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
-                0x00000000100005f4                spe1_program_init
+                0x0000000010000678       0xa8 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+                0x0000000010000678                spe1_program_init
  .text.spe2_program_init
-                0x000000001000069c       0xa8 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
-                0x000000001000069c                spe2_program_init
+                0x0000000010000720       0xa8 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+                0x0000000010000720                spe2_program_init
  .text.startup.main
-                0x0000000010000744      0x324 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
-                0x0000000010000744                main
+                0x00000000100007c8      0x33c CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+                0x00000000100007c8                main
  .text.gpio_default_irq_handler
-                0x0000000010000a68      0x248 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x0000000010000b04      0x248 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
  .text.gpio_set_function
-                0x0000000010000cb0       0x30 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x0000000010000cb0                gpio_set_function
+                0x0000000010000d4c       0x30 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x0000000010000d4c                gpio_set_function
  .text.gpio_set_pulls
-                0x0000000010000ce0       0x30 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x0000000010000ce0                gpio_set_pulls
+                0x0000000010000d7c       0x30 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x0000000010000d7c                gpio_set_pulls
  .text.gpio_set_irq_enabled_with_callback
-                0x0000000010000d10       0xb0 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x0000000010000d10                gpio_set_irq_enabled_with_callback
+                0x0000000010000dac       0xb0 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x0000000010000dac                gpio_set_irq_enabled_with_callback
+ .text.gpio_acknowledge_irq
+                0x0000000010000e5c       0x1c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x0000000010000e5c                gpio_acknowledge_irq
  .text.gpio_init
-                0x0000000010000dc0       0x3c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
-                0x0000000010000dc0                gpio_init
+                0x0000000010000e78       0x3c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_gpio/gpio.c.obj
+                0x0000000010000e78                gpio_init
  .text.running_on_fpga
-                0x0000000010000dfc       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_platform/platform.c.obj
-                0x0000000010000dfc                running_on_fpga
+                0x0000000010000eb4       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_platform/platform.c.obj
+                0x0000000010000eb4                running_on_fpga
  .text.hw_claim_lock
-                0x0000000010000e0c       0x18 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_claim/claim.c.obj
-                0x0000000010000e0c                hw_claim_lock
+                0x0000000010000ec4       0x18 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_claim/claim.c.obj
+                0x0000000010000ec4                hw_claim_lock
  .text.hw_claim_unlock
-                0x0000000010000e24       0x14 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_claim/claim.c.obj
-                0x0000000010000e24                hw_claim_unlock
+                0x0000000010000edc       0x14 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_claim/claim.c.obj
+                0x0000000010000edc                hw_claim_unlock
  .text.hw_claim_or_assert
-                0x0000000010000e38       0x44 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_claim/claim.c.obj
-                0x0000000010000e38                hw_claim_or_assert
+                0x0000000010000ef0       0x44 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_claim/claim.c.obj
+                0x0000000010000ef0                hw_claim_or_assert
  .text.hw_claim_unused_from_range
-                0x0000000010000e7c       0x9c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_claim/claim.c.obj
-                0x0000000010000e7c                hw_claim_unused_from_range
+                0x0000000010000f34       0x9c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_claim/claim.c.obj
+                0x0000000010000f34                hw_claim_unused_from_range
  .text.spin_locks_reset
-                0x0000000010000f18       0x1c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_sync/sync.c.obj
-                0x0000000010000f18                spin_locks_reset
+                0x0000000010000fd0       0x1c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_sync/sync.c.obj
+                0x0000000010000fd0                spin_locks_reset
  .text.next_striped_spin_lock_num
-                0x0000000010000f34       0x18 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_sync/sync.c.obj
-                0x0000000010000f34                next_striped_spin_lock_num
+                0x0000000010000fec       0x18 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_sync/sync.c.obj
+                0x0000000010000fec                next_striped_spin_lock_num
  .text.irq_set_enabled
-                0x0000000010000f4c       0x24 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
-                0x0000000010000f4c                irq_set_enabled
+                0x0000000010001004       0x24 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000000010001004                irq_set_enabled
  .text.irq_get_vtable_handler
-                0x0000000010000f70       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
-                0x0000000010000f70                irq_get_vtable_handler
+                0x0000000010001028       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000000010001028                irq_get_vtable_handler
  .text.irq_set_exclusive_handler
-                0x0000000010000f80       0x54 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
-                0x0000000010000f80                irq_set_exclusive_handler
+                0x0000000010001038       0x54 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000000010001038                irq_set_exclusive_handler
  .text.irq_add_shared_handler
-                0x0000000010000fd4      0x1e8 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
-                0x0000000010000fd4                irq_add_shared_handler
+                0x000000001000108c      0x1e8 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
+                0x000000001000108c                irq_add_shared_handler
  .text.irq_remove_handler
-                0x00000000100011bc      0x1b0 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
-                0x00000000100011bc                irq_remove_handler
+                0x0000000010001274      0x1b0 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000000010001274                irq_remove_handler
  .text.irq_add_tail_to_free_list
-                0x000000001000136c       0xb4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
-                0x000000001000136c                irq_add_tail_to_free_list
+                0x0000000010001424       0xb4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
+                0x0000000010001424                irq_add_tail_to_free_list
  .text.irq_init_priorities
-                0x0000000010001420       0x24 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
-                0x0000000010001420                irq_init_priorities
+                0x00000000100014d8       0x24 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_irq/irq.c.obj
+                0x00000000100014d8                irq_init_priorities
  .text.lock_init
-                0x0000000010001444       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_sync/lock_core.c.obj
-                0x0000000010001444                lock_init
+                0x00000000100014fc       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_sync/lock_core.c.obj
+                0x00000000100014fc                lock_init
  .text.mutex_init
-                0x0000000010001454       0x1c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_sync/mutex.c.obj
-                0x0000000010001454                mutex_init
+                0x000000001000150c       0x1c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_sync/mutex.c.obj
+                0x000000001000150c                mutex_init
  .text.recursive_mutex_init
-                0x0000000010001470       0x1c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_sync/mutex.c.obj
-                0x0000000010001470                recursive_mutex_init
+                0x0000000010001528       0x1c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_sync/mutex.c.obj
+                0x0000000010001528                recursive_mutex_init
  .text.timer_pool_entry_comparator
-                0x000000001000148c       0x34 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
-                0x000000001000148c                timer_pool_entry_comparator
+                0x0000000010001544       0x34 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
+                0x0000000010001544                timer_pool_entry_comparator
  .text.sleep_until_callback
-                0x00000000100014c0       0x30 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
+                0x0000000010001578       0x30 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
  .text.add_alarm_under_lock.isra.0
-                0x00000000100014f0      0x100 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
+                0x00000000100015a8      0x100 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
  .text.alarm_pool_alarm_callback
-                0x00000000100015f0      0x1bc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
+                0x00000000100016a8      0x1bc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
  .text.alarm_pool_init_default
-                0x00000000100017ac       0x6c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
-                0x00000000100017ac                alarm_pool_init_default
+                0x0000000010001864       0x6c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
+                0x0000000010001864                alarm_pool_init_default
  .text.alarm_pool_add_alarm_at
-                0x0000000010001818      0x178 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
-                0x0000000010001818                alarm_pool_add_alarm_at
+                0x00000000100018d0      0x178 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
+                0x00000000100018d0                alarm_pool_add_alarm_at
  .text.sleep_until
-                0x0000000010001990       0xc4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
-                0x0000000010001990                sleep_until
+                0x0000000010001a48       0xc4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
+                0x0000000010001a48                sleep_until
  .text.sleep_ms
-                0x0000000010001a54       0x34 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
-                0x0000000010001a54                sleep_ms
+                0x0000000010001b0c       0x34 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
+                0x0000000010001b0c                sleep_ms
  .text.best_effort_wfe_or_timeout
-                0x0000000010001a88       0xd4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
-                0x0000000010001a88                best_effort_wfe_or_timeout
+                0x0000000010001b40       0xd4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_time/time.c.obj
+                0x0000000010001b40                best_effort_wfe_or_timeout
  .text.hardware_alarm_irq_handler
-                0x0000000010001b5c       0xbc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000010001c14       0xbc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
  .text.hardware_alarm_claim
-                0x0000000010001c18       0x18 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
-                0x0000000010001c18                hardware_alarm_claim
+                0x0000000010001cd0       0x18 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000010001cd0                hardware_alarm_claim
  .text.time_us_64
-                0x0000000010001c30       0x14 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
-                0x0000000010001c30                time_us_64
+                0x0000000010001ce8       0x14 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000010001ce8                time_us_64
  .text.busy_wait_until
-                0x0000000010001c44       0x20 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
-                0x0000000010001c44                busy_wait_until
+                0x0000000010001cfc       0x20 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000010001cfc                busy_wait_until
  .text.hardware_alarm_set_callback
-                0x0000000010001c64       0x8c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
-                0x0000000010001c64                hardware_alarm_set_callback
+                0x0000000010001d1c       0x8c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000010001d1c                hardware_alarm_set_callback
  .text.hardware_alarm_set_target
-                0x0000000010001cf0       0xd4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
-                0x0000000010001cf0                hardware_alarm_set_target
+                0x0000000010001da8       0xd4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000010001da8                hardware_alarm_set_target
  .text.hardware_alarm_cancel
-                0x0000000010001dc4       0x3c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
-                0x0000000010001dc4                hardware_alarm_cancel
+                0x0000000010001e7c       0x3c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
+                0x0000000010001e7c                hardware_alarm_cancel
  .text.ph_merge_nodes
-                0x0000000010001e00       0x68 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_util/pheap.c.obj
+                0x0000000010001eb8       0x68 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_util/pheap.c.obj
  .text.ph_post_alloc_init
-                0x0000000010001e68       0x3c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_util/pheap.c.obj
-                0x0000000010001e68                ph_post_alloc_init
+                0x0000000010001f20       0x3c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_util/pheap.c.obj
+                0x0000000010001f20                ph_post_alloc_init
  .text.ph_merge_two_pass
-                0x0000000010001ea4       0x90 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_util/pheap.c.obj
-                0x0000000010001ea4                ph_merge_two_pass
+                0x0000000010001f5c       0x90 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_util/pheap.c.obj
+                0x0000000010001f5c                ph_merge_two_pass
  .text.ph_remove_any_head
-                0x0000000010001f34      0x100 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_util/pheap.c.obj
+                0x0000000010001fec      0x100 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_util/pheap.c.obj
  .text.ph_remove_head
-                0x0000000010002034      0x104 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_util/pheap.c.obj
-                0x0000000010002034                ph_remove_head
+                0x00000000100020ec      0x104 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_util/pheap.c.obj
+                0x00000000100020ec                ph_remove_head
  .text.ph_remove_and_free_node
-                0x0000000010002138       0x7c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_util/pheap.c.obj
-                0x0000000010002138                ph_remove_and_free_node
+                0x00000000100021f0       0x7c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/common/pico_util/pheap.c.obj
+                0x00000000100021f0                ph_remove_and_free_node
  .text.clocks_init
-                0x00000000100021b4      0x2d0 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x00000000100021b4                clocks_init
+                0x000000001000226c      0x2d0 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x000000001000226c                clocks_init
  .text.clock_get_hz
-                0x0000000010002484        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_clocks/clocks.c.obj
-                0x0000000010002484                clock_get_hz
+                0x000000001000253c        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_clocks/clocks.c.obj
+                0x000000001000253c                clock_get_hz
  .text.pll_init
-                0x0000000010002490       0xa0 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pll/pll.c.obj
-                0x0000000010002490                pll_init
+                0x0000000010002548       0xa0 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pll/pll.c.obj
+                0x0000000010002548                pll_init
  .text.watchdog_start_tick
-                0x0000000010002530       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_watchdog/watchdog.c.obj
-                0x0000000010002530                watchdog_start_tick
+                0x00000000100025e8       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_watchdog/watchdog.c.obj
+                0x00000000100025e8                watchdog_start_tick
  .text.xosc_init
-                0x0000000010002540       0x28 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_xosc/xosc.c.obj
-                0x0000000010002540                xosc_init
+                0x00000000100025f8       0x28 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_xosc/xosc.c.obj
+                0x00000000100025f8                xosc_init
  .text.runtime_init
-                0x0000000010002568       0xf0 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
-                0x0000000010002568                runtime_init
- .text._exit    0x0000000010002658        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
-                0x0000000010002658                _exit
- .text.exit     0x000000001000265c        0x8 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
-                0x000000001000265c                exit
- .text.panic    0x0000000010002664       0x30 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
-                0x0000000010002664                panic
+                0x0000000010002620       0xf0 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
+                0x0000000010002620                runtime_init
+ .text._exit    0x0000000010002710        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
+                0x0000000010002710                _exit
+ .text.exit     0x0000000010002714        0x8 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
+                0x0000000010002714                exit
+ .text.panic    0x000000001000271c       0x30 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
+                0x000000001000271c                panic
  .text.hard_assertion_failure
-                0x0000000010002694        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
-                0x0000000010002694                hard_assertion_failure
+                0x000000001000274c        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
+                0x000000001000274c                hard_assertion_failure
  .text._out_char
-                0x00000000100026a0       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_printf/printf.c.obj
+                0x0000000010002758       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_printf/printf.c.obj
  .text.weak_raw_vprintf
-                0x00000000100026b0       0x30 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_printf/printf.c.obj
-                0x00000000100026b0                weak_raw_vprintf
- .text          0x00000000100026e0       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
+                0x0000000010002768       0x30 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_printf/printf.c.obj
+                0x0000000010002768                weak_raw_vprintf
+ .text          0x0000000010002798       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
  .text.rom_func_lookup
-                0x00000000100026f0       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x00000000100026f0                rom_func_lookup
+                0x00000000100027a8       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x00000000100027a8                rom_func_lookup
  .text.rom_data_lookup
-                0x0000000010002700       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x0000000010002700                rom_data_lookup
+                0x00000000100027b8       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x00000000100027b8                rom_data_lookup
  .text.rom_funcs_lookup
-                0x0000000010002710       0x44 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_bootrom/bootrom.c.obj
-                0x0000000010002710                rom_funcs_lookup
+                0x00000000100027c8       0x44 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_bootrom/bootrom.c.obj
+                0x00000000100027c8                rom_funcs_lookup
  .text.__wrap___aeabi_idiv
-                0x0000000010002754       0x50 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_divider/divider.S.obj
-                0x0000000010002754                __wrap___aeabi_idivmod
-                0x0000000010002754                divmod_s32s32
-                0x0000000010002754                div_s32s32
-                0x0000000010002754                __wrap___aeabi_idiv
-                0x000000001000275c                divmod_s32s32_unsafe
-                0x0000000010002788                divmod_s32s32_savestate
+                0x000000001000280c       0x50 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_divider/divider.S.obj
+                0x000000001000280c                __wrap___aeabi_idivmod
+                0x000000001000280c                divmod_s32s32
+                0x000000001000280c                div_s32s32
+                0x000000001000280c                __wrap___aeabi_idiv
+                0x0000000010002814                divmod_s32s32_unsafe
+                0x0000000010002840                divmod_s32s32_savestate
  .text.__wrap___aeabi_uidiv
-                0x00000000100027a4       0x4c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_divider/divider.S.obj
-                0x00000000100027a4                __wrap___aeabi_uidiv
-                0x00000000100027a4                __wrap___aeabi_uidivmod
-                0x00000000100027a4                div_u32u32
-                0x00000000100027a4                divmod_u32u32
-                0x00000000100027ac                divmod_u32u32_unsafe
-                0x00000000100027d4                divmod_u32u32_savestate
+                0x000000001000285c       0x4c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_divider/divider.S.obj
+                0x000000001000285c                __wrap___aeabi_uidiv
+                0x000000001000285c                __wrap___aeabi_uidivmod
+                0x000000001000285c                div_u32u32
+                0x000000001000285c                divmod_u32u32
+                0x0000000010002864                divmod_u32u32_unsafe
+                0x000000001000288c                divmod_u32u32_savestate
  .text.__aeabi_double_init
-                0x00000000100027f0       0x94 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_double/double_init_rom.c.obj
-                0x00000000100027f0                __aeabi_double_init
+                0x00000000100028a8       0x94 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_double/double_init_rom.c.obj
+                0x00000000100028a8                __aeabi_double_init
  .text.double_table_shim_on_use_helper
-                0x0000000010002884       0x2c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
-                0x0000000010002884                double_table_shim_on_use_helper
+                0x000000001000293c       0x2c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
+                0x000000001000293c                double_table_shim_on_use_helper
  .text.__aeabi_lmul
-                0x00000000100028b0       0x32 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
-                0x00000000100028b0                __wrap___aeabi_lmul
- *fill*         0x00000000100028e2        0x2 
+                0x0000000010002968       0x32 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
+                0x0000000010002968                __wrap___aeabi_lmul
+ *fill*         0x000000001000299a        0x2 
  .text.__wrap___aeabi_farithmetic
-                0x00000000100028e4       0x48 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x00000000100028e4                __wrap___aeabi_frsub
-                0x00000000100028ea                __wrap___aeabi_fsub
-                0x00000000100028f0                __wrap___aeabi_fadd
-                0x00000000100028f6                __wrap___aeabi_fdiv
-                0x000000001000291e                __wrap___aeabi_fmul
+                0x000000001000299c       0x48 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x000000001000299c                __wrap___aeabi_frsub
+                0x00000000100029a2                __wrap___aeabi_fsub
+                0x00000000100029a8                __wrap___aeabi_fadd
+                0x00000000100029ae                __wrap___aeabi_fdiv
+                0x00000000100029d6                __wrap___aeabi_fmul
  .text.__wrap___aeabi_ui2f
-                0x000000001000292c        0xa CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x000000001000292c                __wrap___aeabi_ui2f
- *fill*         0x0000000010002936        0x2 
+                0x00000000100029e4        0xa CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x00000000100029e4                __wrap___aeabi_ui2f
+ *fill*         0x00000000100029ee        0x2 
  .text.__wrap___aeabi_i2f
-                0x0000000010002938       0x44 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x0000000010002938                __wrap___aeabi_i2f
+                0x00000000100029f0       0x44 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x00000000100029f0                __wrap___aeabi_i2f
  .text.__wrap___aeabi_f2uiz
-                0x000000001000297c        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_float/float_aeabi.S.obj
-                0x000000001000297c                __wrap___aeabi_f2uiz
+                0x0000000010002a34        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_float/float_aeabi.S.obj
+                0x0000000010002a34                __wrap___aeabi_f2uiz
  .text.__aeabi_float_init
-                0x0000000010002988       0x64 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_float/float_init_rom.c.obj
-                0x0000000010002988                __aeabi_float_init
+                0x0000000010002a40       0x64 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_float/float_init_rom.c.obj
+                0x0000000010002a40                __aeabi_float_init
  .text.float_table_shim_on_use_helper
-                0x00000000100029ec       0x2c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
-                0x00000000100029ec                float_table_shim_on_use_helper
- .text          0x0000000010002a18       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x0000000010002a18                __aeabi_mem_init
- .text.memcpy   0x0000000010002a28        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
-                0x0000000010002a28                __wrap___aeabi_memcpy
-                0x0000000010002a28                __wrap_memcpy
+                0x0000000010002aa4       0x2c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
+                0x0000000010002aa4                float_table_shim_on_use_helper
+ .text          0x0000000010002ad0       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x0000000010002ad0                __aeabi_mem_init
+ .text.memcpy   0x0000000010002ae0        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
+                0x0000000010002ae0                __wrap___aeabi_memcpy
+                0x0000000010002ae0                __wrap_memcpy
  .text.stdio_out_chars_no_crlf
-                0x0000000010002a34       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio/stdio.c.obj
+                0x0000000010002aec       0x10 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_out_chars_crlf
-                0x0000000010002a44       0xb4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio/stdio.c.obj
+                0x0000000010002afc       0xb4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio/stdio.c.obj
  .text.stdio_put_string.isra.0
-                0x0000000010002af8       0xfc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio/stdio.c.obj
+                0x0000000010002bb0       0xfc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio/stdio.c.obj
  .text.__wrap_putchar
-                0x0000000010002bf4       0x98 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio/stdio.c.obj
-                0x0000000010002bf4                __wrap_putchar
+                0x0000000010002cac       0x98 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio/stdio.c.obj
+                0x0000000010002cac                __wrap_putchar
  .text.__wrap_puts
-                0x0000000010002c8c       0x3c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio/stdio.c.obj
-                0x0000000010002c8c                __wrap_puts
+                0x0000000010002d44       0x3c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio/stdio.c.obj
+                0x0000000010002d44                __wrap_puts
  .text.pio_claim_unused_sm
-                0x0000000010002cc8       0x3c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
-                0x0000000010002cc8                pio_claim_unused_sm
+                0x0000000010002d80       0x3c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
+                0x0000000010002d80                pio_claim_unused_sm
  .text.pio_add_program
-                0x0000000010002d04       0xc8 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
-                0x0000000010002d04                pio_add_program
+                0x0000000010002dbc       0xc8 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
+                0x0000000010002dbc                pio_add_program
  .text.pio_sm_init
-                0x0000000010002dcc       0x8c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
-                0x0000000010002dcc                pio_sm_init
- .text          0x0000000010002e58       0x5c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
-                0x0000000010002e58                strlen
+                0x0000000010002e84       0x8c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
+                0x0000000010002e84                pio_sm_init
+ .text          0x0000000010002f10       0x5c /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libc.a(lib_a-strlen-stub.o)
+                0x0000000010002f10                strlen
  *(.fini)
- .fini          0x0000000010002eb4        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crti.o
-                0x0000000010002eb4                _fini
- .fini.__stub   0x0000000010002eb8       0x30 linker stubs
+ .fini          0x0000000010002f6c        0x4 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crti.o
+                0x0000000010002f6c                _fini
+ .fini.__stub   0x0000000010002f70       0x30 linker stubs
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -1778,110 +1779,110 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
  *(.eh_frame*)
- .eh_frame      0x0000000010002ee8        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
-                0x0000000010002ee8                . = ALIGN (0x4)
+ .eh_frame      0x0000000010002fa0        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
+                0x0000000010002fa0                . = ALIGN (0x4)
 
-.glue_7         0x0000000010002ee8        0x0
- .glue_7        0x0000000010002ee8        0x0 linker stubs
+.glue_7         0x0000000010002fa0        0x0
+ .glue_7        0x0000000010002fa0        0x0 linker stubs
 
-.glue_7t        0x0000000010002ee8        0x0
- .glue_7t       0x0000000010002ee8        0x0 linker stubs
+.glue_7t        0x0000000010002fa0        0x0
+ .glue_7t       0x0000000010002fa0        0x0 linker stubs
 
-.vfp11_veneer   0x0000000010002ee8        0x0
- .vfp11_veneer  0x0000000010002ee8        0x0 linker stubs
+.vfp11_veneer   0x0000000010002fa0        0x0
+ .vfp11_veneer  0x0000000010002fa0        0x0 linker stubs
 
-.v4_bx          0x0000000010002ee8        0x0
- .v4_bx         0x0000000010002ee8        0x0 linker stubs
+.v4_bx          0x0000000010002fa0        0x0
+ .v4_bx         0x0000000010002fa0        0x0 linker stubs
 
-.iplt           0x0000000010002ee8        0x0
- .iplt          0x0000000010002ee8        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x0000000010002fa0        0x0
+ .iplt          0x0000000010002fa0        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x0000000010002ee8      0x164
+.rodata         0x0000000010002fa0      0x164
  *(EXCLUDE_FILE(*libm.a: *libc.a:*lib_a-mem*.o *libgcc.a:) .rodata*)
  .rodata.off1_program
-                0x0000000010002ee8        0x6 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
- *fill*         0x0000000010002eee        0x2 
+                0x0000000010002fa0        0x6 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+ *fill*         0x0000000010002fa6        0x2 
  .rodata.off1_program_instructions
-                0x0000000010002ef0       0x12 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
- *fill*         0x0000000010002f02        0x2 
+                0x0000000010002fa8       0x12 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+ *fill*         0x0000000010002fba        0x2 
  .rodata.off2_program
-                0x0000000010002f04        0x6 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
- *fill*         0x0000000010002f0a        0x2 
+                0x0000000010002fbc        0x6 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+ *fill*         0x0000000010002fc2        0x2 
  .rodata.off2_program_instructions
-                0x0000000010002f0c       0x12 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
- *fill*         0x0000000010002f1e        0x2 
+                0x0000000010002fc4       0x12 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+ *fill*         0x0000000010002fd6        0x2 
  .rodata.spe1_program
-                0x0000000010002f20        0x6 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
- *fill*         0x0000000010002f26        0x2 
+                0x0000000010002fd8        0x6 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+ *fill*         0x0000000010002fde        0x2 
  .rodata.spe1_program_instructions
-                0x0000000010002f28       0x16 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
- *fill*         0x0000000010002f3e        0x2 
+                0x0000000010002fe0       0x16 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+ *fill*         0x0000000010002ff6        0x2 
  .rodata.spe2_program
-                0x0000000010002f40        0x6 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
- *fill*         0x0000000010002f46        0x2 
+                0x0000000010002ff8        0x6 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+ *fill*         0x0000000010002ffe        0x2 
  .rodata.spe2_program_instructions
-                0x0000000010002f48       0x16 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
- *fill*         0x0000000010002f5e        0x2 
+                0x0000000010003000       0x16 CMakeFiles/pico-sync-motor-dev.dir/main.c.obj
+ *fill*         0x0000000010003016        0x2 
  .rodata.hardware_alarm_claim.str1.4
-                0x0000000010002f60       0x22 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
- *fill*         0x0000000010002f82        0x2 
+                0x0000000010003018       0x22 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_timer/timer.c.obj
+ *fill*         0x000000001000303a        0x2 
  .rodata.panic.str1.4
-                0x0000000010002f84       0x12 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
- *fill*         0x0000000010002f96        0x2 
+                0x000000001000303c       0x12 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
+ *fill*         0x000000001000304e        0x2 
  .rodata.hard_assertion_failure.str1.4
-                0x0000000010002f98        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
+                0x0000000010003050        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
  .rodata.str1.4
-                0x0000000010002fa4       0x48 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x000000001000305c       0x48 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_44
-                0x0000000010002fec        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x00000000100030a4        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_75
-                0x0000000010002ff8        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x00000000100030b0        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.__bi_81
-                0x0000000010003004        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x00000000100030bc        0xc CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
  .rodata.crlf_str.0
-                0x0000000010003010        0x2 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio/stdio.c.obj
- *fill*         0x0000000010003012        0x2 
+                0x00000000100030c8        0x2 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_stdio/stdio.c.obj
+ *fill*         0x00000000100030ca        0x2 
  .rodata.pio_claim_unused_sm.str1.4
-                0x0000000010003014       0x24 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
+                0x00000000100030cc       0x24 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
  .rodata.pio_add_program.str1.4
-                0x0000000010003038       0x11 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
-                0x000000001000304c                . = ALIGN (0x4)
- *fill*         0x0000000010003049        0x3 
+                0x00000000100030f0       0x11 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
+                0x0000000010003104                . = ALIGN (0x4)
+ *fill*         0x0000000010003101        0x3 
  *(SORT_BY_ALIGNMENT(SORT_BY_NAME(.flashdata*)))
-                0x000000001000304c                . = ALIGN (0x4)
+                0x0000000010003104                . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x000000001000304c                __exidx_start = .
+                0x0000000010003104                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x000000001000304c                __exidx_end = .
-                0x000000001000304c                . = ALIGN (0x4)
-                0x000000001000304c                __binary_info_start = .
+                0x0000000010003104                __exidx_end = .
+                0x0000000010003104                . = ALIGN (0x4)
+                0x0000000010003104                __binary_info_start = .
 
-.binary_info    0x000000001000304c       0x1c
+.binary_info    0x0000000010003104       0x1c
  *(.binary_info.keep.*)
  .binary_info.keep.__bi_ptr22
-                0x000000001000304c        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x0000000010003104        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr30
-                0x0000000010003050        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x0000000010003108        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr38
-                0x0000000010003054        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x000000001000310c        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr44
-                0x0000000010003058        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x0000000010003110        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr50
-                0x000000001000305c        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x0000000010003114        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr75
-                0x0000000010003060        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x0000000010003118        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
  .binary_info.keep.__bi_ptr81
-                0x0000000010003064        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
+                0x000000001000311c        0x4 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/binary_info.c.obj
  *(.binary_info.*)
-                0x0000000010003068                __binary_info_end = .
+                0x0000000010003120                __binary_info_end = .
 
-.rel.dyn        0x0000000010003068        0x0
- .rel.iplt      0x0000000010003068        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
-                0x0000000010003068                . = ALIGN (0x4)
+.rel.dyn        0x0000000010003120        0x0
+ .rel.iplt      0x0000000010003120        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
+                0x0000000010003120                . = ALIGN (0x4)
 
 .ram_vector_table
                 0x0000000020000000       0xc0
@@ -1890,7 +1891,7 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
                 0x0000000020000000       0xc0 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_runtime/runtime.c.obj
                 0x0000000020000000                ram_vector_table
 
-.data           0x00000000200000c0      0x194 load address 0x0000000010003068
+.data           0x00000000200000c0      0x194 load address 0x0000000010003120
                 0x00000000200000c0                __data_start__ = .
  *(vtable)
  *(.time_critical*)
@@ -1965,36 +1966,36 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(.jcr)
                 0x0000000020000254                . = ALIGN (0x4)
                 0x0000000020000254                __data_end__ = .
-                0x0000000010003068                __etext = LOADADDR (.data)
+                0x0000000010003120                __etext = LOADADDR (.data)
 
 .tm_clone_table
-                0x0000000020000254        0x0 load address 0x00000000100031fc
+                0x0000000020000254        0x0 load address 0x00000000100032b4
  .tm_clone_table
                 0x0000000020000254        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
  .tm_clone_table
                 0x0000000020000254        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtend.o
 
-.igot.plt       0x0000000020000254        0x0 load address 0x00000000100031fc
+.igot.plt       0x0000000020000254        0x0 load address 0x00000000100032b4
  .igot.plt      0x0000000020000254        0x0 /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/crtbegin.o
 
 .uninitialized_data
-                0x0000000020000254        0x0 load address 0x00000000100031fc
+                0x0000000020000254        0x0 load address 0x00000000100032b4
                 0x0000000020000254                . = ALIGN (0x4)
  *(.uninitialized_data*)
 
-.scratch_x      0x0000000020040000        0x0 load address 0x00000000100031fc
+.scratch_x      0x0000000020040000        0x0 load address 0x00000000100032b4
                 0x0000000020040000                __scratch_x_start__ = .
  *(.scratch_x.*)
                 0x0000000020040000                . = ALIGN (0x4)
                 0x0000000020040000                __scratch_x_end__ = .
-                0x00000000100031fc                __scratch_x_source__ = LOADADDR (.scratch_x)
+                0x00000000100032b4                __scratch_x_source__ = LOADADDR (.scratch_x)
 
-.scratch_y      0x0000000020041000        0x0 load address 0x00000000100031fc
+.scratch_y      0x0000000020041000        0x0 load address 0x00000000100032b4
                 0x0000000020041000                __scratch_y_start__ = .
  *(.scratch_y.*)
                 0x0000000020041000                . = ALIGN (0x4)
                 0x0000000020041000                __scratch_y_end__ = .
-                0x00000000100031fc                __scratch_y_source__ = LOADADDR (.scratch_y)
+                0x00000000100032b4                __scratch_y_source__ = LOADADDR (.scratch_y)
 
 .bss            0x0000000020000258      0x3e4
                 0x0000000020000258                . = ALIGN (0x4)
@@ -2058,8 +2059,8 @@ LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nof
  *(.stack*)
  .stack         0x0000000020041000      0x800 CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_standard_link/crt0.S.obj
 
-.flash_end      0x00000000100031fc        0x0
-                0x00000000100031fc                PROVIDE (__flash_binary_end = .)
+.flash_end      0x00000000100032b4        0x0
+                0x00000000100032b4                PROVIDE (__flash_binary_end = .)
                 0x0000000020040000                __StackLimit = (ORIGIN (RAM) + LENGTH (RAM))
                 0x0000000020041000                __StackOneTop = (ORIGIN (SCRATCH_X) + LENGTH (SCRATCH_X))
                 0x0000000020042000                __StackTop = (ORIGIN (SCRATCH_Y) + LENGTH (SCRATCH_Y))
@@ -2119,7 +2120,7 @@ LOAD CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardwa
 LOAD CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_flash/flash.c.obj
 LOAD CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/pico_multicore/multicore.c.obj
 LOAD CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
-LOAD /tmp/ccWxBP3C.o
+LOAD /tmp/ccBogQcd.o
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libstdc++.a
 LOAD /usr/lib/gcc/arm-none-eabi/10.3.1/../../../arm-none-eabi/lib/thumb/v6-m/nofp/libm.a
 START GROUP
@@ -2215,7 +2216,7 @@ LOAD linker stubs
  .ARM.attributes
                 0x00000000000005f0       0x2c CMakeFiles/pico-sync-motor-dev.dir/_deps/pico_sdk-src/src/rp2_common/hardware_pio/pio.c.obj
  .ARM.attributes
-                0x000000000000061c       0x22 /tmp/ccWxBP3C.o
+                0x000000000000061c       0x22 /tmp/ccBogQcd.o
  .ARM.attributes
                 0x000000000000063e       0x1e /usr/lib/gcc/arm-none-eabi/10.3.1/thumb/v6-m/nofp/libgcc.a(_dvmd_tls.o)
  .ARM.attributes

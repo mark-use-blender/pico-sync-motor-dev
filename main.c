@@ -21,67 +21,69 @@ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-s
 #include "spe2.pio.h"
 #include "src/pico_servo.h"
 #define SERVO_PIN 5
+#define motor_pwr 4
 #define estop_pin 6
 #define ARM_PIN 7
 #define LED_PIN 25
 #define reset_pos 90
+#define min_tror_off 10
+
+
 
 
 
 void estop_pin_callback(uint gpio, uint32_t events) {
     // Stop the motor
-    //gpio_acknowledge_irq(gpio, events);
-    //servo_set_position(SERVO_PIN, reset_pos);
-    gpio_put(LED_PIN, 0);
-    // Stop the PIO state machines
-    // pio_sm_set_enabled(pio0, 0, false);
-    // pio_sm_set_enabled(pio0, 1, false);
-    // pio_sm_set_enabled(pio0, 2, false);
-    // pio_sm_set_enabled(pio0, 3, false);
-    // pio_sm_set_enabled(pio1, 0, false);
-    // pio_sm_set_enabled(pio1, 1, false);
-    // pio_sm_set_enabled(pio1, 2, false);
-    // pio_sm_set_enabled(pio1, 3, false);
-    // Stop the program
-    while (true) {
-        gpio_put(LED_PIN, 1);
-        sleep_ms(50);
-        gpio_put(LED_PIN, 0);
-        sleep_ms(100);
-        // gpio_put(LED_PIN, 1);
-        // sleep_ms(50);
-        // gpio_put(LED_PIN, 0);
-        // sleep_ms(50);
-        // gpio_put(LED_PIN, 1);
-        // sleep_ms(50);
-        // gpio_put(LED_PIN, 0);
-        // sleep_ms(50);
-        // gpio_put(LED_PIN, 1);
-        // sleep_ms(200);
-        // gpio_put(LED_PIN, 0);
-        // sleep_ms(50);
-        // gpio_put(LED_PIN, 1);
-        // sleep_ms(200);
-        // gpio_put(LED_PIN, 0);
-        // sleep_ms(50);
-        // gpio_put(LED_PIN, 1);
-        // sleep_ms(200);
-        // gpio_put(LED_PIN, 0);
-        // sleep_ms(50);
-        // gpio_put(LED_PIN, 1);
-        // sleep_ms(50);
-        // gpio_put(LED_PIN, 0);
-        // sleep_ms(50);
-        // gpio_put(LED_PIN, 1);
-        // sleep_ms(50);
-        // gpio_put(LED_PIN, 0);
-        // sleep_ms(50);
-        // gpio_put(LED_PIN, 1);
-        // sleep_ms(50);
-        // gpio_put(LED_PIN, 0);
-        // sleep_ms(200);
+    gpio_acknowledge_irq(gpio, events);
+    gpio_put(motor_pwr, 0);
+    servo_set_position(SERVO_PIN, reset_pos);
 
+    for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3000000; i++) {
+            gpio_put(LED_PIN, 1);
+            
+            
+        }
+        for (int i = 0; i < 1500000; i++) {
+            gpio_put(LED_PIN, 0);
+            
+            
+        }
     }
+    for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 12000000; i++) {
+            gpio_put(LED_PIN, 1);
+            
+            
+        }
+        for (int i = 0; i < 1500000; i++) {
+            gpio_put(LED_PIN, 0);
+            
+            
+        }
+    }
+    for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 3000000; i++) {
+            gpio_put(LED_PIN, 1);
+            
+            
+        }
+        for (int i = 0; i < 1500000; i++) {
+            gpio_put(LED_PIN, 0);
+            
+            
+        }
+    }
+    for (int i = 0; i < 9000000; i++) 
+    {
+        gpio_put(LED_PIN, 0);
+            
+            
+    }
+        
+    
+
+    
 }
 
 
@@ -98,7 +100,10 @@ int main() {
     gpio_init(estop_pin);
     gpio_set_dir(estop_pin, GPIO_IN);
     gpio_pull_down(estop_pin);
-    // Initialize interrupts
+    // Initialize motor power pin
+    gpio_init(motor_pwr);
+    gpio_set_dir(motor_pwr, GPIO_OUT);
+    gpio_put(motor_pwr, 0);
     
     // Initialize arm pin
     gpio_init(ARM_PIN);
@@ -147,10 +152,12 @@ int main() {
         sleep_ms(50);
 
     }
-    gpio_set_irq_enabled_with_callback (estop_pin,GPIO_IRQ_LEVEL_LOW, true, &estop_pin_callback);
+    gpio_set_irq_enabled_with_callback (estop_pin,GPIO_IRQ_EDGE_FALL , true, &estop_pin_callback);
     gpio_put(LED_PIN, 1);
     while (true)
     {
+
+        gpio_put(motor_pwr, 0);
         off1_last = 0;
         off2_last = 0;
         spe1_last = 0;
@@ -168,11 +175,13 @@ int main() {
             sleep_ms(50);
         }
         
-        curpwm = reset_pos+30;// put motor throttle to start position
+        curpwm = reset_pos+min_tror_off;// put motor throttle to start position
+        gpio_put(motor_pwr, 1);
         servo_set_position(SERVO_PIN, curpwm); 
         sleep_ms(500);
         //match offset( min(off1,off2) smaller better) and speed (abs(spe1-spe2) smaller better)
         while (gpio_get(ARM_PIN) == 1) {
+            gpio_put(motor_pwr, 1);
             gpio_put(LED_PIN, 1);
             //get the current value form the pio state machines
             off1 = pio_sm_get(pio00, sm1);
@@ -199,14 +208,14 @@ int main() {
                         curpwm = curpwm + 1;
                     }
                     curpwm = MIN(180,curpwm);
-                    curpwm = MAX(reset_pos+10,curpwm);
+                    curpwm = MAX(reset_pos+min_tror_off,curpwm);
                     servo_set_position(SERVO_PIN, curpwm);
                 }else
                 {
                     //offset adjustment
                     if (offset > 10){
                         if (off1 > off2){
-                            servo_set_position(SERVO_PIN, MAX(reset_pos+10 ,(curpwm - 1)));
+                            servo_set_position(SERVO_PIN, MAX(reset_pos+min_tror_off ,(curpwm - 1)));
                         }else{
                             servo_set_position(SERVO_PIN, MIN(180,(curpwm + 1)));
                         }
