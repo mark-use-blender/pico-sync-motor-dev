@@ -37,53 +37,37 @@ void estop_pin_callback(uint gpio, uint32_t events) {
     gpio_acknowledge_irq(gpio, events);
     gpio_put(motor_pwr, 0);
     servo_set_position(SERVO_PIN, reset_pos);
-
-    for (int i = 0; i < 3; i++) {
-        for (int i = 0; i < 3000000; i++) {
-            gpio_put(LED_PIN, 1);
-            
-            
-        }
-        for (int i = 0; i < 1500000; i++) {
-            gpio_put(LED_PIN, 0);
-            
-            
-        }
-    }
-    for (int i = 0; i < 3; i++) {
-        for (int i = 0; i < 12000000; i++) {
-            gpio_put(LED_PIN, 1);
-            
-            
-        }
-        for (int i = 0; i < 1500000; i++) {
-            gpio_put(LED_PIN, 0);
-            
-            
-        }
-    }
-    for (int i = 0; i < 3; i++) {
-        for (int i = 0; i < 3000000; i++) {
-            gpio_put(LED_PIN, 1);
-            
-            
-        }
-        for (int i = 0; i < 1500000; i++) {
-            gpio_put(LED_PIN, 0);
-            
-            
-        }
-    }
-    for (int i = 0; i < 9000000; i++) 
+    while (true)
     {
-        gpio_put(LED_PIN, 0);
-            
-            
+        for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 3000000; i++) {
+                gpio_put(LED_PIN, 1);
+            }
+            for (int i = 0; i < 1500000; i++) {
+                gpio_put(LED_PIN, 0);
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 12000000; i++) {
+                gpio_put(LED_PIN, 1);
+            }
+            for (int i = 0; i < 1500000; i++) {
+                gpio_put(LED_PIN, 0);
+            }
+        }
+        for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < 3000000; i++) {
+                gpio_put(LED_PIN, 1);
+            }
+            for (int i = 0; i < 1500000; i++) {
+                gpio_put(LED_PIN, 0);
+            }
+        }
+        for (int i = 0; i < 9000000; i++) 
+        {
+            gpio_put(LED_PIN, 0);
+        }
     }
-        
-    
-
-    
 }
 
 
@@ -150,13 +134,11 @@ int main() {
         sleep_ms(200);
         gpio_put(LED_PIN, 0);
         sleep_ms(50);
-
     }
     gpio_set_irq_enabled_with_callback (estop_pin,GPIO_IRQ_EDGE_FALL , true, &estop_pin_callback);
     gpio_put(LED_PIN, 1);
     while (true)
     {
-
         gpio_put(motor_pwr, 0);
         off1_last = 0;
         off2_last = 0;
@@ -166,7 +148,6 @@ int main() {
         speeddiff_last = 0;
         servo_set_position(SERVO_PIN, reset_pos);
         // Stop the PIO state machines
-
         while (gpio_get(ARM_PIN) == 0)
         {
             gpio_put(LED_PIN, 1);
@@ -174,7 +155,6 @@ int main() {
             gpio_put(LED_PIN, 0);
             sleep_ms(50);
         }
-        
         curpwm = reset_pos+min_tror_off;// put motor throttle to start position
         gpio_put(motor_pwr, 1);
         servo_set_position(SERVO_PIN, curpwm); 
@@ -221,14 +201,11 @@ int main() {
                         }
                         sleep_ms(5);
                         servo_set_position(SERVO_PIN, curpwm );
-
                     }
 
                 }
             
             }
-        
-
             //store the last value
             off1_last = off1;
             off2_last = off2;
@@ -236,7 +213,6 @@ int main() {
             spe2_last = spe2;
             offset_last = offset;
             speeddiff_last = speeddiff;
-
         }
     }
 }
