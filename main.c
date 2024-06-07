@@ -30,6 +30,7 @@ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-s
 #define LED_PIN 25
 #define reset_pos 90
 #define min_tror_off 10
+#define cldiv 10000
 
 
 
@@ -146,10 +147,10 @@ int main() {
     uint offset3 = pio_add_program(pio01, &spe1_program);
     uint offset4 = pio_add_program(pio01, &spe2_program);
     // Initialize the program using the helper function in our .pio file
-    off1_program_init(pio00, sm1, offset1, 1);
-    off2_program_init(pio00, sm2, offset2, 1);
-    spe1_program_init(pio01, sm3, offset3, 1);
-    spe2_program_init(pio01, sm4, offset4, 1);
+    off1_program_init(pio00, sm1, offset1, cldiv);
+    off2_program_init(pio00, sm2, offset2, cldiv);
+    spe1_program_init(pio01, sm3, offset3, cldiv);
+    spe2_program_init(pio01, sm4, offset4, cldiv);
     // Start running our PIO program in the state machine
     pio_sm_set_enabled(pio00, sm1, true);
     pio_sm_set_enabled(pio00, sm2, true);
@@ -274,6 +275,7 @@ int main() {
             spe2_last = spe2;
             offset_last = offset;
             speeddiff_last = speeddiff;
+            sleep_ms(20);
         }
     }
 }
