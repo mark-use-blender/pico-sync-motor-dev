@@ -21,11 +21,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-
-    - run: cd .. ; git clone https://github.com/raspberrypi/pico-sdk.git
-    - run: cd ${{github.workspace}}/build
     - run: sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
-    - run: cd ${{github.workspace}}/build ; cmake ..  ; make
+    - run: cd .. ; git clone https://github.com/raspberrypi/pico-sdk.git; cd pico-sdk; git submodule update --init
+
+
+    - run: cd ${{github.workspace}}/build ; cmake ./.. -DPICO_SDK_PATH=../../pico-sdk ; make
 
       
 
