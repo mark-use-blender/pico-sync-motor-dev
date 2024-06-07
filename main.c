@@ -24,11 +24,13 @@ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-s
 #define motor_pwr 4
 #define estop_pin 6
 #define ARM_PIN 7
+#define sync_stat_red_led 13
+#define sync_stat_green_led 14
+#define debug_led_pin 15
 #define LED_PIN 25
 #define reset_pos 90
 #define min_tror_off 10
-#define sync_stat_red_led 13
-#define sync_stat_green_led 14
+
 
 
 
@@ -45,30 +47,37 @@ void estop_pin_callback(uint gpio, uint32_t events) {
         for (int i = 0; i < 3; i++) {
             for (int i = 0; i < 3000000; i++) {
                 gpio_put(LED_PIN, 1);
+                gpio_put(debug_led_pin, 1);
             }
             for (int i = 0; i < 1500000; i++) {
                 gpio_put(LED_PIN, 0);
+                gpio_put(debug_led_pin, 0);
             }
         }
         for (int i = 0; i < 3; i++) {
             for (int i = 0; i < 12000000; i++) {
                 gpio_put(LED_PIN, 1);
+                gpio_put(debug_led_pin, 1);
             }
             for (int i = 0; i < 1500000; i++) {
                 gpio_put(LED_PIN, 0);
+                gpio_put(debug_led_pin, 0);
             }
         }
         for (int i = 0; i < 3; i++) {
             for (int i = 0; i < 3000000; i++) {
                 gpio_put(LED_PIN, 1);
+                gpio_put(debug_led_pin, 1);
             }
             for (int i = 0; i < 1500000; i++) {
                 gpio_put(LED_PIN, 0);
+                gpio_put(debug_led_pin, 0);
             }
         }
         for (int i = 0; i < 9000000; i++) 
         {
             gpio_put(LED_PIN, 0);
+            gpio_put(debug_led_pin, 0);
         }
     }
 }
@@ -102,14 +111,21 @@ int main() {
     gpio_set_dir(LED_PIN, GPIO_OUT);
     gpio_put(LED_PIN, 1);
 
+    // Initialize debug_led pin
+    gpio_init(debug_led_pin);
+    gpio_set_dir(debug_led_pin, GPIO_OUT);
+    gpio_put(debug_led_pin, 0);
+
     // Initialize sync_stat_red_led pin
     gpio_init(sync_stat_red_led);
     gpio_set_dir(sync_stat_red_led, GPIO_OUT);
     gpio_put(sync_stat_red_led, 0);
+
     // Initialize sync_stat_green_led pin
     gpio_init(sync_stat_green_led);
     gpio_set_dir(sync_stat_green_led, GPIO_OUT);
     gpio_put(sync_stat_green_led, 0);
+
     // Initialize PWM
     servo_enable(SERVO_PIN);
     curpwm = reset_pos;// put motor throttle to neutral position
@@ -140,15 +156,19 @@ int main() {
     pio_sm_set_enabled(pio01, sm3, true);
     pio_sm_set_enabled(pio01, sm4, true);
     gpio_put(LED_PIN, 0);
+    gpio_put(debug_led_pin, 0);
     //wait for arm cammand
     while (gpio_get(estop_pin) == 0) {
         gpio_put(LED_PIN, 1);
+        gpio_put(debug_led_pin, 1);
         sleep_ms(200);
         gpio_put(LED_PIN, 0);
+        gpio_put(debug_led_pin, 0);
         sleep_ms(50);
     }
     gpio_set_irq_enabled_with_callback (estop_pin,GPIO_IRQ_EDGE_FALL , true, &estop_pin_callback);
     gpio_put(LED_PIN, 1);
+    gpio_put(debug_led_pin, 1);
     while (true)
     {
         gpio_put(motor_pwr, 0);
@@ -163,20 +183,33 @@ int main() {
         while (gpio_get(ARM_PIN) == 0)
         {
             gpio_put(LED_PIN, 1);
+            gpio_put(debug_led_pin, 1);
             sleep_ms(50);
             gpio_put(LED_PIN, 0);
+            gpio_put(debug_led_pin, 0);
             sleep_ms(50);
         }
         gpio_put(LED_PIN, 1);
+        gpio_put(debug_led_pin, 1);
         gpio_put(motor_pwr, 1);
         sleep_ms(500);
         gpio_put(LED_PIN, 0);
+        gpio_put(debug_led_pin, 0);
         curpwm = reset_pos+min_tror_off;// put motor throttle to start position
         servo_set_position(SERVO_PIN, curpwm); 
         //match offset( min(off1,off2) smaller better) and speed (abs(spe1-spe2) smaller better)
+        pio_sm_restart (pio00, sm1);
+        pio_sm_restart (pio00, sm2);
+        pio_sm_restart (pio01, sm3);
+        pio_sm_restart (pio01, sm4);
+        pio_sm_clear_fifos (pio00, sm1);
+        pio_sm_clear_fifos (pio00, sm2);
+        pio_sm_clear_fifos (pio01, sm3);
+        pio_sm_clear_fifos (pio01, sm4);
         while (gpio_get(ARM_PIN) == 1) {
             gpio_put(motor_pwr, 1);
             gpio_put(LED_PIN, 1);
+            gpio_put(debug_led_pin, 1);
             //get the current value form the pio state machines
             off1 = pio_sm_get(pio00, sm1);
             off2 = pio_sm_get(pio00, sm2);
@@ -191,6 +224,7 @@ int main() {
             speeddiff = abs(spe1-spe2);
             offset = MIN(off1,off2);
             gpio_put(LED_PIN, 0);
+            gpio_put(debug_led_pin, 0);
             gpio_put(sync_stat_red_led, 0);
             gpio_put(sync_stat_green_led, 0);
             //adjust the motor power
