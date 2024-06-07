@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v4
 
     
-    - working-directory: ${{github.workspace}}/build
+    - run: cd ${{github.workspace}}/build
     - run: sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
     - run: cmake ..
     - run: make
