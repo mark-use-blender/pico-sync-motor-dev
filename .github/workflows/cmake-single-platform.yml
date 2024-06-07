@@ -26,6 +26,7 @@ jobs:
     - run: cd ${{github.workspace}}/build
     - run: sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib
     - run: cd ${{github.workspace}}/build ; cmake .. ; make
+    - run: cd ${{github.workspace}}/build ; cmake .. ; make
  
       
 
