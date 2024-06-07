@@ -5,13 +5,16 @@ mov x, ! NULL
 
 WAIT 0 gpio 3
 
-WAIT 0 gpio 2
+WAIT 1 gpio 2
 
 WAIT 1 gpio 3
 
+
 loop:
-JMP PIN, rst
-JMP x-- loop
+JMP x-- cnt
+JMP rst
+cnt:
+JMP PIN, loop
 
 rst:
 mov x, ! X

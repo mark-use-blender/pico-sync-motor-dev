@@ -13,26 +13,27 @@
 // ---- //
 
 #define off1_wrap_target 0
-#define off1_wrap 8
+#define off1_wrap 9
 
 static const uint16_t off1_program_instructions[] = {
             //     .wrap_target
     0xa02b, //  0: mov    x, !null                   
     0x2003, //  1: wait   0 gpio, 3                  
-    0x2002, //  2: wait   0 gpio, 2                  
+    0x2082, //  2: wait   1 gpio, 2                  
     0x2083, //  3: wait   1 gpio, 3                  
-    0x00c6, //  4: jmp    pin, 6                     
-    0x0044, //  5: jmp    x--, 4                     
-    0xa029, //  6: mov    x, !x                      
-    0x4020, //  7: in     x, 32                      
-    0x8000, //  8: push   noblock                    
+    0x0046, //  4: jmp    x--, 6                     
+    0x0007, //  5: jmp    7                          
+    0x00c4, //  6: jmp    pin, 4                     
+    0xa029, //  7: mov    x, !x                      
+    0x4020, //  8: in     x, 32                      
+    0x8000, //  9: push   noblock                    
             //     .wrap
 };
 
 #if !PICO_NO_HARDWARE
 static const struct pio_program off1_program = {
     .instructions = off1_program_instructions,
-    .length = 9,
+    .length = 10,
     .origin = -1,
 };
 

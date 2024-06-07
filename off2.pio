@@ -3,11 +3,11 @@
 .wrap_target
 mov x, ! NULL
 
-WAIT 0 gpio 2
+WAIT 1 gpio 2
 
 WAIT 0 gpio 3
 
-WAIT 1 gpio 2
+WAIT 0 gpio 2
 
 loop:
 JMP PIN, rst

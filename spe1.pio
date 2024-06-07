@@ -6,11 +6,12 @@ WAIT 1 gpio 2
 
 .wrap_target
 MOV x ! NULL
+Lloop:
+JMP PIN    Hloop
+JMP x--  Lloop
 Hloop:
 JMP PIN, cnt
-Lloop:
-JMP PIN    rst
-JMP x--  Lloop
+JMP rst
 cnt:
 JMP x--  Hloop
 

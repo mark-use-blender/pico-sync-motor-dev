@@ -18,9 +18,9 @@
 static const uint16_t off2_program_instructions[] = {
             //     .wrap_target
     0xa02b, //  0: mov    x, !null                   
-    0x2002, //  1: wait   0 gpio, 2                  
+    0x2082, //  1: wait   1 gpio, 2                  
     0x2003, //  2: wait   0 gpio, 3                  
-    0x2082, //  3: wait   1 gpio, 2                  
+    0x2002, //  3: wait   0 gpio, 2                  
     0x00c6, //  4: jmp    pin, 6                     
     0x0044, //  5: jmp    x--, 4                     
     0xa029, //  6: mov    x, !x                      
