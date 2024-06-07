@@ -27,6 +27,9 @@ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-s
 #define LED_PIN 25
 #define reset_pos 90
 #define min_tror_off 10
+#define sync_stat_red_led 13
+#define sync_stat_green_led 14
+
 
 
 
@@ -98,6 +101,15 @@ int main() {
     gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
     gpio_put(LED_PIN, 1);
+
+    // Initialize sync_stat_red_led pin
+    gpio_init(sync_stat_red_led);
+    gpio_set_dir(sync_stat_red_led, GPIO_OUT);
+    gpio_put(sync_stat_red_led, 0);
+    // Initialize sync_stat_green_led pin
+    gpio_init(sync_stat_green_led);
+    gpio_set_dir(sync_stat_green_led, GPIO_OUT);
+    gpio_put(sync_stat_green_led, 0);
     // Initialize PWM
     servo_enable(SERVO_PIN);
     curpwm = reset_pos;// put motor throttle to neutral position
@@ -155,10 +167,12 @@ int main() {
             gpio_put(LED_PIN, 0);
             sleep_ms(50);
         }
-        curpwm = reset_pos+min_tror_off;// put motor throttle to start position
+        gpio_put(LED_PIN, 1);
         gpio_put(motor_pwr, 1);
-        servo_set_position(SERVO_PIN, curpwm); 
         sleep_ms(500);
+        gpio_put(LED_PIN, 0);
+        curpwm = reset_pos+min_tror_off;// put motor throttle to start position
+        servo_set_position(SERVO_PIN, curpwm); 
         //match offset( min(off1,off2) smaller better) and speed (abs(spe1-spe2) smaller better)
         while (gpio_get(ARM_PIN) == 1) {
             gpio_put(motor_pwr, 1);
@@ -177,10 +191,14 @@ int main() {
             speeddiff = abs(spe1-spe2);
             offset = MIN(off1,off2);
             gpio_put(LED_PIN, 0);
+            gpio_put(sync_stat_red_led, 0);
+            gpio_put(sync_stat_green_led, 0);
             //adjust the motor power
-            if (abs(speeddiff-speeddiff_last) < 50 && abs(offset-offset_last) < 50)
+            if (abs(speeddiff-speeddiff_last) < 50)
             {
                 if (speeddiff > 10){
+                    gpio_put(sync_stat_red_led, 1);
+                    
                     //speed adjustment
                     if (spe1 > spe2){
                         curpwm = curpwm - 1;
@@ -190,10 +208,14 @@ int main() {
                     curpwm = MIN(180,curpwm);
                     curpwm = MAX(reset_pos+min_tror_off,curpwm);
                     servo_set_position(SERVO_PIN, curpwm);
-                }else
+                    
+                }
+                else if (abs(offset-offset_last) < 50)
                 {
                     //offset adjustment
                     if (offset > 10){
+                        gpio_put(sync_stat_red_led, 1);
+                        gpio_put(sync_stat_green_led, 1);
                         if (off1 > off2){
                             servo_set_position(SERVO_PIN, MAX(reset_pos+min_tror_off ,(curpwm - 1)));
                         }else{
@@ -202,6 +224,11 @@ int main() {
                         sleep_ms(5);
                         servo_set_position(SERVO_PIN, curpwm );
                     }
+                    else
+                    {
+                        gpio_put(sync_stat_green_led, 1);
+                    }
+                    
 
                 }
             
