@@ -24,9 +24,9 @@ openocd -f interface/raspberrypi-swd.cfg -f target/rp2040.cfg -c "program pico-s
 #define motor_pwr 4
 #define estop_pin 6
 #define ARM_PIN 7
-#define sync_stat_red_led 13
-#define sync_stat_green_led 14
-#define debug_led_pin 15
+#define sync_stat_red_led 10
+#define sync_stat_green_led 11
+#define debug_led_pin 12
 #define LED_PIN 25
 #define reset_pos 90
 #define min_tror_off 10
