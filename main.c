@@ -159,6 +159,15 @@ int main() {
     gpio_put(LED_PIN, 0);
     gpio_put(debug_led_pin, 0);
     //wait for arm cammand
+    while (gpio_get(ARM_PIN) == 1)
+        {
+            gpio_put(LED_PIN, 1);
+            gpio_put(debug_led_pin, 1);
+            sleep_ms(200);
+            gpio_put(LED_PIN, 0);
+            gpio_put(debug_led_pin, 0);
+            sleep_ms(50);
+        }
     while (gpio_get(estop_pin) == 0) {
         gpio_put(LED_PIN, 1);
         gpio_put(debug_led_pin, 1);
@@ -172,6 +181,11 @@ int main() {
     gpio_put(debug_led_pin, 1);
     while (true)
     {
+    
+        gpio_put(LED_PIN, 0);
+        gpio_put(debug_led_pin, 0);
+        gpio_put(sync_stat_red_led, 0);
+        gpio_put(sync_stat_green_led, 0);
         gpio_put(motor_pwr, 0);
         off1_last = 0;
         off2_last = 0;
@@ -211,70 +225,74 @@ int main() {
             gpio_put(motor_pwr, 1);
             gpio_put(LED_PIN, 1);
             gpio_put(debug_led_pin, 1);
-            //get the current value form the pio state machines
-            off1 = pio_sm_get(pio00, sm1);
-            off2 = pio_sm_get(pio00, sm2);
-            spe1 = pio_sm_get(pio01, sm3);
-            spe2 = pio_sm_get(pio01, sm4);
-            //clear the fifo
-            pio_sm_clear_fifos (pio00, sm1);
-            pio_sm_clear_fifos (pio00, sm2);
-            pio_sm_clear_fifos (pio01, sm3);
-            pio_sm_clear_fifos (pio01, sm4);
-            //callculate motor power adjustment
-            speeddiff = abs(spe1-spe2);
-            offset = MIN(off1,off2);
-            gpio_put(LED_PIN, 0);
-            gpio_put(debug_led_pin, 0);
-            gpio_put(sync_stat_red_led, 0);
-            gpio_put(sync_stat_green_led, 0);
-            //adjust the motor power
-            if (abs(speeddiff-speeddiff_last) < 50)
+            if(!pio_sm_is_rx_fifo_empty(pio00, sm1) && !pio_sm_is_rx_fifo_empty(pio00, sm2) && !pio_sm_is_rx_fifo_empty(pio01, sm3) && !pio_sm_is_rx_fifo_empty(pio01, sm4))
             {
-                if (speeddiff > 10){
-                    gpio_put(sync_stat_red_led, 1);
-                    
-                    //speed adjustment
-                    if (spe1 > spe2){
-                        curpwm = curpwm - 1;
-                    }else{  
-                        curpwm = curpwm + 1;
-                    }
-                    curpwm = MIN(180,curpwm);
-                    curpwm = MAX(reset_pos+min_tror_off,curpwm);
-                    servo_set_position(SERVO_PIN, curpwm);
-                    
-                }
-                else if (abs(offset-offset_last) < 50)
+                //get the current value form the pio state machines
+                off1 = pio_sm_get(pio00, sm1);
+                off2 = pio_sm_get(pio00, sm2);
+                spe1 = pio_sm_get(pio01, sm3);
+                spe2 = pio_sm_get(pio01, sm4);
+                //clear the fifo
+                pio_sm_clear_fifos (pio00, sm1);
+                pio_sm_clear_fifos (pio00, sm2);
+                pio_sm_clear_fifos (pio01, sm3);
+                pio_sm_clear_fifos (pio01, sm4);
+                //callculate motor power adjustment
+                speeddiff = abs(spe1-spe2);
+                offset = MIN(off1,off2);
+                gpio_put(LED_PIN, 0);
+                gpio_put(debug_led_pin, 0);
+                gpio_put(sync_stat_red_led, 0);
+                gpio_put(sync_stat_green_led, 0);
+                //adjust the motor power
+                if (abs(speeddiff-speeddiff_last) < 50)
                 {
-                    //offset adjustment
-                    if (offset > 10){
+                    if (speeddiff > 10){
                         gpio_put(sync_stat_red_led, 1);
-                        gpio_put(sync_stat_green_led, 1);
-                        if (off1 > off2){
-                            servo_set_position(SERVO_PIN, MAX(reset_pos+min_tror_off ,(curpwm - 1)));
-                        }else{
-                            servo_set_position(SERVO_PIN, MIN(180,(curpwm + 1)));
+                        
+                        //speed adjustment
+                        if (spe1 > spe2){
+                            curpwm = curpwm - 1;
+                        }else{  
+                            curpwm = curpwm + 1;
                         }
-                        sleep_ms(5);
-                        servo_set_position(SERVO_PIN, curpwm );
+                        curpwm = MIN(180,curpwm);
+                        curpwm = MAX(reset_pos+min_tror_off,curpwm);
+                        servo_set_position(SERVO_PIN, curpwm);
+                        
                     }
-                    else
+                    else if (abs(offset-offset_last) < 50)
                     {
-                        gpio_put(sync_stat_green_led, 1);
-                    }
-                    
+                        //offset adjustment
+                        if (offset > 10){
+                            gpio_put(sync_stat_red_led, 1);
+                            gpio_put(sync_stat_green_led, 1);
+                            if (off1 > off2){
+                                servo_set_position(SERVO_PIN, MAX(reset_pos+min_tror_off ,(curpwm - 1)));
+                            }else{
+                                servo_set_position(SERVO_PIN, MIN(180,(curpwm + 1)));
+                            }
+                            sleep_ms(5);
+                            servo_set_position(SERVO_PIN, curpwm );
+                        }
+                        else
+                        {
+                            gpio_put(sync_stat_green_led, 1);
+                        }
+                        
 
+                    }
+                
                 }
-            
+                //store the last value
+                off1_last = off1;
+                off2_last = off2;
+                spe1_last = spe1;
+                spe2_last = spe2;
+                offset_last = offset;
+                speeddiff_last = speeddiff;
             }
-            //store the last value
-            off1_last = off1;
-            off2_last = off2;
-            spe1_last = spe1;
-            spe2_last = spe2;
-            offset_last = offset;
-            speeddiff_last = speeddiff;
+
             sleep_ms(20);
         }
     }
